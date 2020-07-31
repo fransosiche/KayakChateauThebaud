@@ -5,9 +5,9 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>Canoë Kayak Château Thébaud</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="" />
-    <meta name="keywords" content="" />
-    <meta name="author" content="" />
+    <meta name="description" content=""/>
+    <meta name="keywords" content=""/>
+    <meta name="author" content=""/>
     <link href="{{ asset('images/fav.jpg') }}" rel="icon">
 
 
@@ -17,10 +17,10 @@
     <meta property="og:url" content=""/>
     <meta property="og:site_name" content=""/>
     <meta property="og:description" content=""/>
-    <meta name="twitter:title" content="" />
-    <meta name="twitter:image" content="" />
-    <meta name="twitter:url" content="" />
-    <meta name="twitter:card" content="" />
+    <meta name="twitter:title" content=""/>
+    <meta name="twitter:image" content=""/>
+    <meta name="twitter:url" content=""/>
+    <meta name="twitter:card" content=""/>
 
     <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,700,900" rel="stylesheet">
 
@@ -50,7 +50,7 @@
     <!-- Modernizr JS -->
     <script src="{{asset('js/modernizr-2.6.2.min.js')}}"></script>
     <!-- FOR IE9 below -->
-    <!--[if lt IE 9]>
+<!--[if lt IE 9]>
     <script src="{{asset('js/respond.min.js')}}"></script>
     <![endif]-->
 
@@ -70,34 +70,33 @@
                     <div class="col-md-10 text-right menu-1">
                         <ul>
                             <li class="active"><a href="/">Accueil</a></li>
-                            <li><a href="/Ecole">Ecole de pagaie</a></li>
                             <li class="has-dropdown">
-                                <a href="classes.html">Loisirs</a>
+                                <a href="">Loisirs</a>
                                 <ul class="dropdown">
-                                    <li><a href="classes-single.html">Randonnée</a></li>
-                                    <li><a href="#">Location</a></li>
+                                    <li><a href="/Ecole">Ecole de pagaie</a></li>
+                                    <li><a href="#">Randonnée</a></li>
                                     <li><a href="#">Parcours</a></li>
                                     <li><a href="#">Plan d'accès</a></li>
                                     <li><a href="#">Ecole, centre aéré, comité d'entreprise</a></li>
                                 </ul>
                             </li>
                             <li class="has-dropdown">
-                                <a href="classes.html">Disciplines</a>
+                                <a>Disciplines</a>
                                 <ul class="dropdown">
                                     <li><a href="/slalom">Slalom</a></li>
                                     <li><a href="/kayakpolo">Kayak-Polo</a></li>
                                     <li><a href="#">Descente</a></li>
                                 </ul>
                             </li>
-                            <li><a href="blog.html">Blog</a></li>
+                            <li><a href="">Blog</a></li>
                             <li><a href="contact.html">Contact</a></li>
-                            <li class="btn-cta"><a href="#">Réservation</a></li>
+                            <li class="btn-cta"><a href="#">Locations</a></li>
                             @if(Auth::user() == null)
-                                <li><a  href="/login" class="nav-link" >Se Connecter</a></li>
-                                <li><a  href="/register" class="nav-link" >S'enregister</a></li>
+                                <li><a href="/login" class="nav-link">Se Connecter</a></li>
+                                <li><a href="/register" class="nav-link">S'enregister</a></li>
                             @else
-                                <li><a >Vous êtes connecté</a></li>
-                                <li> <a href="/logout">Se Deconnecter</a></li>
+                                <li><a> Bonjour {{ Auth::user() -> name }}</a></li>
+                                <li><a href="/logout">Se Deconnecter</a></li>
                             @endif
                         </ul>
                     </div>
@@ -108,32 +107,34 @@
     <aside id="colorlib-hero">
         <div class="flexslider">
             <ul class="slides">
-                <li style="background-image: url(images/img_bg_2.jpg);">
+                <li style="background-image: url({{ url('/images/img_bg_2.jpg')}});">
                     <div class="overlay"></div>
                     <div class="container-fluid">
                         <div class="row">
                             <div class="col-md-6 col-sm-12 col-md-offset-3 slider-text">
                                 <div class="slider-text-inner text-center">
                                     <h1>Bienvenue sur le site de l'ALCKCT</h1>
-                                    <p><a href="#" class="btn btn-primary btn-lg btn-learn">Réserver des canoës-kayaks dés maintenant</a></p>
+                                    <p><a href="#" class="btn btn-primary btn-lg btn-learn">Réserver des canoës-kayaks
+                                            dés maintenant</a></p>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </li>
-                <li style="background-image: url(images/img_bg_1.jpg);">
+                <li style="background-image: url({{ url('/images/img_bg_1.jpg')}});">
                     <div class="overlay"></div>
                     <div class="container-fluid">
                         <div class="row">
                             <div class="col-md-8 col-sm-12 col-md-offset-2 slider-text">
                                 <div class="slider-text-inner text-center">
-                                    <h1>Vous trouverez sur ces pages les dernières actualités du club de canoë kayak</h1>
+                                    <h1>Vous trouverez sur ces pages les dernières actualités du club de canoë
+                                        kayak</h1>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </li>
-                <li style="background-image: url(images/img_bg_3.jpg);">
+                <li style="background-image: url({{ url('/images/img_bg_3.jpg')}});">
                     <div class="overlay"></div>
                     <div class="container-fluid">
                         <div class="row">
@@ -146,13 +147,14 @@
                         </div>
                     </div>
                 </li>
-                <li style="background-image: url(images/img_bg_4.jpg);">
+                <li style="background-image: url({{ url('/images/img_bg_4.jpg')}});">
                     <div class="overlay"></div>
                     <div class="container-fluid">
                         <div class="row">
                             <div class="col-md-8 col-sm-12 col-md-offset-2 slider-text">
                                 <div class="slider-text-inner text-center">
-                                    <h1>Le site de Pont Caffino, surplombé de falaises, offre de nombreuses activités</h1>
+                                    <h1>Le site de Pont Caffino, surplombé de falaises, offre de nombreuses
+                                        activités</h1>
                                 </div>
                             </div>
                         </div>
@@ -162,73 +164,63 @@
         </div>
     </aside>
 
-@yield('content')
+    @yield('content')
 
 
     <footer id="colorlib-footer">
         <div class="container">
             <div class="row row-pb-md">
                 <div class="col-md-3 colorlib-widget">
-                    <h4>About Robust Gym</h4>
-                    <p>Far from the countries Vokalia and Consonantia, there live the blind texts. Separated they live in Bookmarksgrove right at the coast of the Semantics</p>
+                    <h4>A propos du club de canoë-kayak de Chateau-Thébaud</h4>
+                    <p>Sur notre site de Pont Caffino, surplombé de falaises, la vallée de la Maine ressemble à un
+                        véritable petit canyon où il est possible de pratiquer de nombreuses activités.
+                    </p>
                     <p>
                     <ul class="colorlib-social-icons">
-                        <li><a href="#"><i class="icon-twitter"></i></a></li>
-                        <li><a href="#"><i class="icon-facebook"></i></a></li>
-                        <li><a href="#"><i class="icon-linkedin"></i></a></li>
-                        <li><a href="#"><i class="icon-dribbble"></i></a></li>
+                        <li><a href="https://www.facebook.com/ALCKCT"><i class="icon-facebook"></i></a></li>
                     </ul>
                     </p>
                 </div>
                 <div class="col-md-3 colorlib-widget">
-                    <h4>Quick Links</h4>
+                    <h4>Liens rapides</h4>
                     <p>
                     <ul class="colorlib-footer-links">
-                        <li><a href="#"><i class="icon-check"></i> About Us</a></li>
-                        <li><a href="#"><i class="icon-check"></i> Testimonials</a></li>
-                        <li><a href="#"><i class="icon-check"></i> Classes</a></li>
+                        <li><a href="/"><i class="icon-check"></i> Accueil</a></li>
                         <li><a href="#"><i class="icon-check"></i> Blog</a></li>
-                        <li><a href="#"><i class="icon-check"></i> Blog</a></li>
-                        <li><a href="#"><i class="icon-check"></i> Contact</a></li>
+                        <li><a href="#"><i class="icon-check"></i> Locations</a></li>
+                        <li><a href="#"><i class="icon-check"></i> Conditions d'utilisations</a></li>
                     </ul>
                     </p>
                 </div>
 
                 <div class="col-md-3 colorlib-widget">
-                    <h4>Recent Post</h4>
+                    <h4>Sites utiles</h4>
                     <div class="f-blog">
-                        <a href="blog.html" class="blog-img" style="background-image: url(images/blog-1.jpg);">
-                        </a>
                         <div class="desc">
-                            <h2><a href="blog.html">Tips for sexy body</a></h2>
-                            <p class="admin"><span>18 April 2018</span></p>
+                            <h2><a style="padding-top: -20px" href="https://www.pontcaffino.fr/">Base de loisirs de Pont Caffino</a></h2>
                         </div>
                     </div>
                     <div class="f-blog">
-                        <a href="blog.html" class="blog-img" style="background-image: url(images/blog-2.jpg);">
-                        </a>
                         <div class="desc">
-                            <h2><a href="blog.html">Tips for sexy body</a></h2>
-                            <p class="admin"><span>18 April 2018</span></p>
+                            <h2><a style="padding-bottom: 20px" href="https://amicale-mcanonnet.org/">Amical Laïque de Château Thébaud </a></h2>
                         </div>
                     </div>
                     <div class="f-blog">
-                        <a href="blog.html" class="blog-img" style="background-image: url(images/blog-3.jpg);">
-                        </a>
                         <div class="desc">
-                            <h2><a href="blog.html">Tips for sexy body</a></h2>
-                            <p class="admin"><span>18 April 2018</span></p>
+                            <h2><a href="https://www.ffck.org/">Fédération Française de canoë kayak et sport de
+                                    pagaie</a></h2>
                         </div>
                     </div>
                 </div>
 
                 <div class="col-md-3 colorlib-widget">
-                    <h4>Contact Info</h4>
+                    <h4>Informations de contact</h4>
                     <ul class="colorlib-footer-links">
-                        <li>291 South 21th Street, <br> Suite 721 New York NY 10016</li>
-                        <li><a href="tel://1234567920"><i class="icon-phone"></i> + 1235 2355 98</a></li>
-                        <li><a href="mailto:info@yoursite.com"><i class="icon-envelope"></i> info@yoursite.com</a></li>
-                        <li><a href="http://luxehotel.com"><i class="icon-location4"></i> yourwebsite.com</a></li>
+                        <li>Caffino 44690
+                            , <br>Château-Thébaud</li>
+                        <li><a href="tel://0240065407"><i class="icon-phone"></i> 02.40.06.54.07</a></li>
+                        <li><a href="mailto:alckct@orange.fr"><i class="icon-envelope"></i> alckct@orange.fr </a></li>
+                        <li><a href="https://canoekayak.amicale-mcanonnet.org"><i class="icon-location4"></i> canoekayak.amicale-mcanonnet.org</a></li>
                     </ul>
                 </div>
             </div>
@@ -238,10 +230,16 @@
                 <div class="row">
                     <div class="col-md-12 text-center">
                         <p>
-                            <small class="block">&copy; <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-                                Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with <i class="icon-heart" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Colorlib</a>
-                                <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. --></small><br>
-                            <small class="block">Demo Images: <a href="http://unsplash.co/" target="_blank">Unsplash</a>, <a href="http://pexels.com/" target="_blank">Pexels</a></small>
+                            <small class="block">&copy;
+                                <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+                                Copyright &copy;<script>document.write(new Date().getFullYear());</script>
+                                All rights reserved | This template is made with <i class="icon-heart"
+                                                                                    aria-hidden="true"></i> by <a
+                                    href="https://colorlib.com" target="_blank">Colorlib and was edited</a> <a
+                                    href="https://www.linkedin.com/in/fran%C3%A7ois-biron-337911178/" target="_blank">
+                                    by François Biron</a>
+                                <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+                            </small><br>
                         </p>
                     </div>
                 </div>
