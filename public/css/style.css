@@ -894,6 +894,20 @@ h1, h2, h3, h4, h5, h6, figure {
     height: 250px;
 }
 
+.classes .classes-imgg {
+    display: block;
+    position: relative;
+    height: 900px;
+}
+
+.classes .classes-imggg {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    height: 564px;
+    width: 800px;
+}
+
 .classes .classes-img .price {
     display: inline-block;
     padding: .5em;

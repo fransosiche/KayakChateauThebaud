@@ -190,10 +190,6 @@
         </div>
     </div>
 
-
-
-
-
     <div class="colorlib-blog colorlib-light-white">
         <div class="container">
             <div class="row">
@@ -216,7 +212,8 @@
                 @foreach($data as $key=> $data)
                     <div class="col-md-4 animate-box">
                         <article class="article-entry">
-                            <a href="" class="blog-img" style="background-image: url( images/{{$data -> Pic_URL	}} );">
+                            <a href="" class="blog-img"
+                               style="background-image: url( images/{{$data -> Pic_URL	}} );">
                             </a>
                             <div class="desc">
                                 <h2><a href="#">{{$data -> Title	}}</a></h2>
@@ -227,14 +224,16 @@
                             <div class="schedule text-center animate-box">
                                 <div class="col-md-12">
                                     <ul class="week">
-                                        <li class="active"><a style="font-size : 20px" href="/Edit/{{ $data->id}}">Editer</a></li>
+                                        <li class="active"><a style="font-size : 20px" href="/Edit/{{ $data->id}}">Editer</a>
+                                        </li>
                                     </ul>
                                 </div>
                             </div>
                             <div class="schedule text-center animate-box">
                                 <div class="col-md-12">
                                     <ul class="week">
-                                        <li class="active"><a style="font-size : 20px" href="/Delete/{{ $data->id}}">Supprimer</a></li>
+                                        <li class="active"><a style="font-size : 20px" href="/Delete/{{ $data->id}}">Supprimer</a>
+                                        </li>
                                     </ul>
                                 </div>
                             </div>

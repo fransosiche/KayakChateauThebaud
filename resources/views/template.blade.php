@@ -71,26 +71,25 @@
                         <ul>
                             <li class="active"><a href="/">Accueil</a></li>
                             <li class="has-dropdown">
-                                <a href="">Loisirs</a>
+                                <a>Loisirs</a>
                                 <ul class="dropdown">
                                     <li><a href="/Ecole">Ecole de pagaie</a></li>
-                                    <li><a href="#">Randonnée</a></li>
-                                    <li><a href="#">Parcours</a></li>
-                                    <li><a href="#">Plan d'accès</a></li>
-                                    <li><a href="#">Ecole, centre aéré, comité d'entreprise</a></li>
+                                    <li><a href="/Pagayons">Pagayons</a></li>
+                                    <li><a href="/Parcours">Parcours</a></li>
+                                    <li><a href="https://www.pontcaffino.fr/">Ecole, centre aéré, comité d'entreprise</a></li>
                                 </ul>
                             </li>
                             <li class="has-dropdown">
                                 <a>Disciplines</a>
                                 <ul class="dropdown">
-                                    <li><a href="/slalom">Slalom</a></li>
-                                    <li><a href="/kayakpolo">Kayak-Polo</a></li>
-                                    <li><a href="#">Descente</a></li>
+                                    <li><a href="/Slalom">Slalom</a></li>
+                                    <li><a href="/Kayak-Polo">Kayak-Polo</a></li>
+                                    <li><a href="/Descente">Descente</a></li>
                                 </ul>
                             </li>
-                            <li><a href="">Blog</a></li>
-                            <li><a href="contact.html">Contact</a></li>
-                            <li class="btn-cta"><a href="#">Locations</a></li>
+                            <li><a href="/Actualites">Posts</a></li>
+                            <li><a href="/Contact">Contact</a></li>
+                            <li class="btn-cta"><a href="#">Réservations</a></li>
                             @if(Auth::user() == null)
                                 <li><a href="/login" class="nav-link">Se Connecter</a></li>
                                 <li><a href="/register" class="nav-link">S'enregister</a></li>

@@ -14,20 +14,41 @@ class MainController extends Controller
 {
     public function index()
     {
-        $data = DB::table('posts')
+        $data = DB::table('posts')->orderBy('id', 'desc')->take(3)
             ->get();
         return view('welcome', compact('data'));
 
     }
 
+    public function ActualiteDisplay()
+    {
+        $data = DB::table('posts')
+            ->get();
+        return view('Posts', compact('data'));
+
+    }
+
+    public function ContactDisplay(){
+
+        return view('Contact');
+    }
+
+    public function StoreContact()
+    {
+            $data = request()->validate([
+                'fsurname' => 'required',
+                'fname' => 'required',
+            ]);
+    }
+
     public function SlalomDisplay()
     {
-        return view('slalom');
+        return view('Slalom');
     }
 
     public function KayakPoloDisplay()
     {
-        return view('kayakpolo');
+        return view('Kayak-Polo');
     }
 
     public function EcoleDisplay()
@@ -35,6 +56,20 @@ class MainController extends Controller
         return view('ecoledepagaie');
     }
 
+    public function PagayonsDisplay()
+    {
+        return view('Pagayons');
+    }
+
+    public function ParcoursDisplay()
+    {
+        return view('Parcours');
+    }
+
+    public function DescenteDisplay()
+    {
+        return view('Descente');
+    }
 
     public function DisplayPost(FormBuilder $formBuilder)
     {
@@ -123,21 +158,21 @@ class MainController extends Controller
             return redirect('/');
         } else {
             if (!empty($_POST)) {
-                    if ((request()->validate(['Image' => 'image|mimes:jpeg,png,jpg,gif,svg'])) != null) {
-                        $image_tab = DB::table('posts')->where('id', $id)->select('Pic_URL')->get();
-                        if (file_exists(public_path('images' . '\\' . $image_tab[0]->Pic_URL))) {
-                            unlink(public_path('images' . '\\' . $image_tab[0]->Pic_URL));
-                        }
-
-                        $imageName = time() . '1' . '.' . request()->Image->getClientOriginalExtension();
-                        request()->Image->move(public_path('images'), $imageName);
-                        DB::table('posts')->where('id', $id)->update(array(
-                            'Pic_URL' => $imageName
-                        ));
+                if ((request()->validate(['Image' => 'image|mimes:jpeg,png,jpg,gif,svg'])) != null) {
+                    $image_tab = DB::table('posts')->where('id', $id)->select('Pic_URL')->get();
+                    if (file_exists(public_path('images' . '\\' . $image_tab[0]->Pic_URL))) {
+                        unlink(public_path('images' . '\\' . $image_tab[0]->Pic_URL));
                     }
 
-                    DB::table('posts')->where('id', $id)
-                        ->update(['Title' => $request->Title, 'Description' => $request->Description]);
+                    $imageName = time() . '1' . '.' . request()->Image->getClientOriginalExtension();
+                    request()->Image->move(public_path('images'), $imageName);
+                    DB::table('posts')->where('id', $id)->update(array(
+                        'Pic_URL' => $imageName
+                    ));
+                }
+
+                DB::table('posts')->where('id', $id)
+                    ->update(['Title' => $request->Title, 'Description' => $request->Description]);
 
             } else {
                 return redirect('/');

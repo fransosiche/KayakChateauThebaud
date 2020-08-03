@@ -16,9 +16,15 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', array('as' => 'index', 'uses' => 'MainController@index'));
 
 Auth::routes();
-Route::get('/kayakpolo', array('as' => 'kayakpolo', 'uses' => 'MainController@KayakPoloDisplay'));
-Route::get('/slalom', array('as' => 'slalom', 'uses' => 'MainController@SlalomDisplay'));
-Route::get('/ecole', array('as' => 'ecole', 'uses' => 'MainController@EcoleDisplay'));
+Route::get('/Kayak-Polo', array('as' => 'Kayak-Polo', 'uses' => 'MainController@KayakPoloDisplay'));
+Route::get('/Slalom', array('as' => 'Slalom', 'uses' => 'MainController@SlalomDisplay'));
+Route::get('/Ecole', array('as' => 'Ecole', 'uses' => 'MainController@EcoleDisplay'));
+Route::get('/Pagayons', array('as' => 'Pagayons', 'uses' => 'MainController@PagayonsDisplay'));
+Route::get('/Parcours', array('as' => 'Parcours', 'uses' => 'MainController@ParcoursDisplay'));
+Route::get('/Descente', array('as' => 'Descente', 'uses' => 'MainController@DescenteDisplay'));
+Route::get('/Actualites', array('as' => 'Actualites', 'uses' => 'MainController@ActualiteDisplay'));
+Route::get('/Contact', array('as' => 'Contact', 'uses' => 'MainController@ContactDisplay'));
+Route::post('/Contact', array('as' => 'StoreContact', 'uses' => 'MainController@StoreContact'));
 
 Route::get('/home', 'HomeController@index')->name('home');
 

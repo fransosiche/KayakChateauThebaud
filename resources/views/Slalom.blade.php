@@ -1,30 +1,27 @@
 @extends('template')
-
 @section('content')
     <div class="colorlib-classes colorlib-light-grey">
         <div class="container">
             <div class="row">
                 <div class="col-md-8 col-md-offset-2 text-center colorlib-heading animate-box">
-                    <h2>L'école de pagaie</h2>
-                    <p>L'école de pagaie reprendra le mercredi 2 septembre 2020. </p>
-                    <p> Les créneaux pour les enfants sont le mercredi de 13h50 à 15h50 pour les débutants, les
-                        confirmés de 15h50 à 18h. Nous avons aussi le samedi de 10h30 à 12h30.
-
-                        Pour les adultes intéressés pour naviguer un créneau de 10h30 à 12h30 le samedi matin.
-
-                        Pour ceux qui veulent découvrir le kayak polo les séances auront lieu le mercredi soir de 18h30
-                        à 20h30.
+                    <h2>Le slalom, comment ça marche ?</h2>
+                    <p>C'est une course contre la montre où les concurrents doivent suivre un parcours comportant de 18
+                        à 25 portes, de couleur rouge ou verte. </p>
+                    <p> On doit passer entre les portes sans les toucher, dans le sens de la descente pour les vertes,
+                        en remontée pour les rouges.</p>
                     <p>
-                        lieu : club de canoë kayak de Château Thébaud à Pont Caffino</p>
+                        Chaque touche donne une pénalité de 2 points, tandis qu'une porte franchie de manière incorrecte
+                        entraîne 50 points de pénalité.
+                    </p>
                     <p>
-                        Pour nous contacter 02.40.06.54.07 Valérie SIBIOUDE
+                        Les pénalités sont ajoutées au temps réalisé qui est converti en points (1 point = 1 seconde)
                     </p>
                 </div>
             </div>
             <div class="row">
                 <div class="col-md-4 animate-box">
                     <div class="classes">
-                        <div class="classes-img" style="background-image: url(images/classes-4.jpg);">
+                        <div class="classes-img" style="background-image: url(images/classes-8.jpg);">
                         </div>
                         <div class="desc">
                             <h3><a></a></h3>
@@ -33,7 +30,7 @@
                 </div>
                 <div class="col-md-4 animate-box">
                     <div class="classes">
-                        <div class="classes-img" style="background-image: url(images/classes-5.jpg);">
+                        <div class="classes-img" style="background-image: url(images/classes-9.jpg);">
                         </div>
                         <div class="desc">
                             <h3><a></a></h3>
@@ -42,7 +39,7 @@
                 </div>
                 <div class="col-md-4 animate-box">
                     <div class="classes">
-                        <div class="classes-img" style="background-image: url(images/classes-6.jpg);">
+                        <div class="classes-img" style="background-image: url(images/classes-10.jpg);">
                         </div>
                         <div class="desc">
                             <h3><a></a></h3>
