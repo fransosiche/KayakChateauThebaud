@@ -144,6 +144,85 @@ h1, h2, h3, h4, h5, h6, figure {
     color: #fff;
 }
 
+select {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    -ms-appearance: none;
+    appearance: none;
+    outline: 0;
+    box-shadow: none;
+    border: 0 !important;
+    background: #f2f3f7;
+    background-image: none;
+}
+/* Remove IE arrow */
+select::-ms-expand {
+    display: none;
+}
+/* Custom Select */
+.select {
+    position: relative;
+    display: flex;
+    width: 20em;
+    height: 3em;
+    line-height: 3;
+    background: #bdc330;
+    overflow: hidden;
+    border-radius: .25em;
+}
+.selectt {
+    position: relative;
+    display: flex;
+    width: 60em;
+    height: 4em;
+    line-height: 3;
+    background: #bdc330;
+    overflow: hidden;
+    border-radius: .25em;
+}
+select {
+    flex: 1;
+    padding: 0 .5em;
+    color: #555555;
+    cursor: pointer;
+}
+/* Arrow */
+.select::after {
+    content: '\25BC';
+    position: absolute;
+    top: 0;
+    right: 0;
+    padding: 0 1em;
+    background: #f2f3f7;
+    cursor: pointer;
+    pointer-events: none;
+    -webkit-transition: .25s all ease;
+    -o-transition: .25s all ease;
+    transition: .25s all ease;
+}
+/* Transition */
+.select:hover::after {
+    color: #a1a62d;
+}
+/* Arrow */
+.selectt::after {
+    content: '\25BC';
+    position: absolute;
+    top: 10px;
+    right: 0;
+    padding: 0 1em;
+    background: #f2f3f7;
+    cursor: pointer;
+    pointer-events: none;
+    -webkit-transition: .25s all ease;
+    -o-transition: .25s all ease;
+    transition: .25s all ease;
+}
+/* Transition */
+.selectt:hover::after {
+    color: #a1a62d;
+}
+
 .colorlib-nav #colorlib-logo a i {
     color: #a1a62d;
 }
@@ -892,6 +971,11 @@ h1, h2, h3, h4, h5, h6, figure {
     display: block;
     position: relative;
     height: 250px;
+}
+.classes .classes-image {
+    display: block;
+    height: 1200px;
+    background-repeat: no-repeat;
 }
 
 .classes .classes-imgg {

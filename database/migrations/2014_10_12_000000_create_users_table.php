@@ -1,7 +1,9 @@
 <?php
 
+use App\User;
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
+use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Schema;
 
 class CreateUsersTable extends Migration
@@ -23,6 +25,14 @@ class CreateUsersTable extends Migration
             $table->rememberToken();
             $table->timestamps();
         });
+
+        $New_User = new User();
+
+        $New_User->name="François Biron";
+        $New_User->email="francois.biron@viacesi.fr";
+        $New_User->password=Hash::make("Qovjei2qv@");
+        $New_User->is_admin="1";
+        $New_User->save();
     }
 
     /**

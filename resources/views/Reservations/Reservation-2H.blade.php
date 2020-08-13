@@ -1,37 +1,13 @@
 @extends('template')
+
 @section('content')
+
     <div id="colorlib-contact">
         <div class="container">
             <div class="row">
                 <div class="col-md-10 col-md-offset-1 animate-box">
-                    <h2>Informations de contact</h2>
-                    <div class="row">
-                        <div class="col-md-12">
-                            <div class="contact-info-wrap-flex">
-                                <div class="con-info">
-                                    <p><span><i class="icon-location-2"></i></span> Caffino
-                                        , <br> 44690 Château-Thébaud</p>
-                                </div>
-                                <div class="con-info">
-                                    <p><span><i class="icon-phone3"></i></span> <a href="tel://0240065407">02.40.06.54.07</a>
-                                    </p>
-                                </div>
-                                <div class="con-info">
-                                    <p><span><i class="icon-paperplane"></i></span> <a href="mailto:alckct@orange.fr">alckct@orange.fr</a>
-                                    </p>
-                                </div>
-                                <div class="con-info">
-                                    <p><span><i class="icon-globe"></i></span> <a
-                                            href="canoekayak.amicale-mcanonnet.org">canoekayak.amicale-mcanonnet.org</a>
-                                    </p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-10 col-md-offset-1 animate-box">
-                    <h2>Envoyer un mail</h2>
-                    <form action="/Contact" method="POST">
+                    <h2>Veuillez renseigner les informations</h2>
+                    <form action="/Reservation/2H" method="POST">
                         @csrf
                         <div class="row form-group">
                             <div class="col-md-6">
@@ -63,7 +39,19 @@
 
                         <div class="row form-group">
                             <div class="col-md-12">
-                                <!-- <label for="email">Email</label> -->
+                                <input name="adresse" type="text" id="adresse"
+                                       class="form-control @error('adresse') is-invalid @enderror"
+                                       placeholder="{{ __('Votre adresse') }}" required autocomplete="adresse">
+                                @error('adresse')
+                                <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                                @enderror
+                            </div>
+                        </div>
+
+                        <div class="row form-group">
+                            <div class="col-md-12">
                                 <input name="mail" type="email" id="mail"
                                        class="form-control @error('mail') is-invalid @enderror"
                                        placeholder="{{ __('Votre adresse mail') }}" required autocomplete="mail">
@@ -74,40 +62,39 @@
                                 @enderror
                             </div>
                         </div>
-
                         <div class="row form-group">
                             <div class="col-md-12">
-                                <!-- <label for="subject">Subject</label> -->
-                                <input name="subject" type="text" id="subject"
-                                       class="form-control @error('subject') is-invalid @enderror"
-                                       placeholder="Le sujet du message" required autocomplete="subject">
-                                @error('subject')
+                                <label for="jour">Choisissez le jour de la réservation</label>
+                                <input name="jour" type="date" id="jour"
+                                       class="form-control @error('jour') is-invalid @enderror"
+                                       required autocomplete="jour">
+                                @error('jour')
                                 <span class="invalid-feedback" role="alert">
                                         <strong>{{ $message }}</strong>
                                     </span>
                                 @enderror
                             </div>
                         </div>
-
                         <div class="row form-group">
                             <div class="col-md-12">
-                                <!-- <label for="message">Message</label> -->
-                                <textarea name="message" id="message" cols="30" rows="10"
-                                          class="form-control @error('message') is-invalid @enderror"
-                                          placeholder="Le message que vous souhaitez nous faire parvenir" required autocomplete="message"></textarea>
-                                @error('message')
-                                <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $message }}</strong>
-                                    </span>
-                                @enderror
+                                <div class="select">
+                                    <select name="slct" id="slct" required>
+                                        <option value="" selected disabled>Choisissez votre créneau horaire</option>
+                                        <option value="10:00">10H - 12H</option>
+                                        <option value="12:00">12H - 14H</option>
+                                        <option value="14:00">14H - 16H</option>
+                                        <option value="16:00">16H - 18H</option>
+                                    </select>
+                                </div>
                             </div>
                         </div>
                         <div class="form-group">
-                            <input type="submit" value="Envoyer le message" class="btn btn-primary">
+                            <input type="submit" value="Passer à la selection des embarcations" class="btn btn-primary">
                         </div>
                     </form>
                 </div>
             </div>
         </div>
     </div>
+
 @endsection

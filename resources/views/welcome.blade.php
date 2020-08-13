@@ -110,7 +110,7 @@
                         <div class="classes-img" style="background-image: url(images/classes-1.jpg);">
                         </div>
                         <div class="desc">
-                            <h3><a href="#">Kayaks</a></h3>
+                            <h3>Kayaks</h3>
                             <p>Location de kayak insubmersible et submersible 1 place jusqu'à 2 places</p>
                         </div>
                     </div>
@@ -120,7 +120,7 @@
                         <div class="classes-img" style="background-image: url(images/classes-2.jpg);">
                         </div>
                         <div class="desc">
-                            <h3><a href="#">Paddle</a></h3>
+                            <h3>Paddle</h3>
                             <p>Location de paddle</p>
                         </div>
                     </div>
@@ -130,7 +130,7 @@
                         <div class="classes-img" style="background-image: url(images/classes-3.jpg);">
                         </div>
                         <div class="desc">
-                            <h3><a href="#">Canoë</a></h3>
+                            <h3>Canoë</h3>
                             <p>Location de canoë de 2 à 4 places.</p>
                         </div>
                     </div>
@@ -182,7 +182,7 @@
                 <div class="schedule text-center animate-box">
                     <div class="col-md-12">
                         <ul class="week">
-                            <li class="active"><a style="font-size : 20px" href="#">Réservez dés maintenant</a></li>
+                            <li class="active"><a style="font-size : 20px" href="/Reservation">Réservez dés maintenant</a></li>
                         </ul>
                     </div>
                 </div>
@@ -212,11 +212,11 @@
                 @foreach($data as $key=> $data)
                     <div class="col-md-4 animate-box">
                         <article class="article-entry">
-                            <a href="" class="blog-img"
+                            <a href="/Actualités/{{$data -> id}}" class="blog-img"
                                style="background-image: url( images/{{$data -> Pic_URL	}} );">
                             </a>
                             <div class="desc">
-                                <h2><a href="#">{{$data -> Title	}}</a></h2>
+                                <h2><a href="/Actualités/{{$data -> id}}">{{$data -> Title	}}</a></h2>
                                 <p>{{$data -> Description}}</p>
                             </div>
                         </article>

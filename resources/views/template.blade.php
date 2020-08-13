@@ -71,12 +71,12 @@
                         <ul>
                             <li class="active"><a href="/">Accueil</a></li>
                             <li class="has-dropdown">
-                                <a>Loisirs</a>
+                                <a>Club</a>
                                 <ul class="dropdown">
                                     <li><a href="/Ecole">Ecole de pagaie</a></li>
+                                    <li><a href="/Inscription">Inscription</a></li>
                                     <li><a href="/Pagayons">Pagayons</a></li>
                                     <li><a href="/Parcours">Parcours</a></li>
-                                    <li><a href="https://www.pontcaffino.fr/">Ecole, centre aéré, comité d'entreprise</a></li>
                                 </ul>
                             </li>
                             <li class="has-dropdown">
@@ -89,7 +89,7 @@
                             </li>
                             <li><a href="/Actualites">Posts</a></li>
                             <li><a href="/Contact">Contact</a></li>
-                            <li class="btn-cta"><a href="#">Réservations</a></li>
+                            <li class="btn-cta"><a href="/Reservation">Locations</a></li>
                             @if(Auth::user() == null)
                                 <li><a href="/login" class="nav-link">Se Connecter</a></li>
                                 <li><a href="/register" class="nav-link">S'enregister</a></li>
@@ -113,7 +113,8 @@
                             <div class="col-md-6 col-sm-12 col-md-offset-3 slider-text">
                                 <div class="slider-text-inner text-center">
                                     <h1>Bienvenue sur le site de l'ALCKCT</h1>
-                                    <p><a href="#" class="btn btn-primary btn-lg btn-learn">Réserver des canoës-kayaks
+                                    <p><a href="/Reservation" class="btn btn-primary btn-lg btn-learn">Réserver des
+                                            canoës-kayaks
                                             dés maintenant</a></p>
                                 </div>
                             </div>
@@ -140,7 +141,8 @@
                             <div class="col-md-6 col-sm-12 col-md-offset-3 slider-text">
                                 <div class="slider-text-inner text-center">
                                     <h1>Les locations sont disponibles </h1>
-                                    <p><a href="#" class="btn btn-primary btn-lg btn-learn">Réserver maintenant</a></p>
+                                    <p><a href="/Reservation" class="btn btn-primary btn-lg btn-learn">Réserver
+                                            maintenant</a></p>
                                 </div>
                             </div>
                         </div>
@@ -185,8 +187,8 @@
                     <p>
                     <ul class="colorlib-footer-links">
                         <li><a href="/"><i class="icon-check"></i> Accueil</a></li>
-                        <li><a href="#"><i class="icon-check"></i> Blog</a></li>
-                        <li><a href="#"><i class="icon-check"></i> Locations</a></li>
+                        <li><a href="/Actualites"><i class="icon-check"></i> Actualités</a></li>
+                        <li><a href="/Reservation"><i class="icon-check"></i> Locations</a></li>
                         <li><a href="#"><i class="icon-check"></i> Conditions d'utilisations</a></li>
                     </ul>
                     </p>
@@ -196,12 +198,14 @@
                     <h4>Sites utiles</h4>
                     <div class="f-blog">
                         <div class="desc">
-                            <h2><a style="padding-top: -20px" href="https://www.pontcaffino.fr/">Base de loisirs de Pont Caffino</a></h2>
+                            <h2><a style="padding-top: -20px" href="https://www.pontcaffino.fr/">Base de loisirs de Pont
+                                    Caffino</a></h2>
                         </div>
                     </div>
                     <div class="f-blog">
                         <div class="desc">
-                            <h2><a style="padding-bottom: 20px" href="https://amicale-mcanonnet.org/">Amical Laïque de Château Thébaud </a></h2>
+                            <h2><a style="padding-bottom: 20px" href="https://amicale-mcanonnet.org/">Amical Laïque de
+                                    Château Thébaud </a></h2>
                         </div>
                     </div>
                     <div class="f-blog">
@@ -216,10 +220,12 @@
                     <h4>Informations de contact</h4>
                     <ul class="colorlib-footer-links">
                         <li>Caffino 44690
-                            , <br>Château-Thébaud</li>
+                            , <br>Château-Thébaud
+                        </li>
                         <li><a href="tel://0240065407"><i class="icon-phone"></i> 02.40.06.54.07</a></li>
                         <li><a href="mailto:alckct@orange.fr"><i class="icon-envelope"></i> alckct@orange.fr </a></li>
-                        <li><a href="https://canoekayak.amicale-mcanonnet.org"><i class="icon-location4"></i> canoekayak.amicale-mcanonnet.org</a></li>
+                        <li><a href="https://canoekayak.amicale-mcanonnet.org"><i class="icon-location4"></i>
+                                canoekayak.amicale-mcanonnet.org</a></li>
                     </ul>
                 </div>
             </div>

@@ -4,10 +4,12 @@ namespace App\Http\Controllers;
 
 use App\Forms\CreatePost;
 use App\Forms\PostForm;
+use App\Mail\ContactMail;
 use App\post;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Mail;
 use Kris\LaravelFormBuilder\FormBuilder;
 
 class MainController extends Controller
@@ -28,17 +30,44 @@ class MainController extends Controller
 
     }
 
-    public function ContactDisplay(){
+    public function ContactDisplay()
+    {
 
         return view('Contact');
     }
 
+    public function InscriptionDisplay()
+    {
+
+        return view('Inscription');
+    }
+
+    public function DisplayPostItems($id)
+    {
+        try {
+
+            $data = DB::table('posts')->where('id', '=', $id)
+                ->get();
+            return view('PostsItems', compact('data'));
+
+        } catch (Exception $e) {
+            echo $e->getMessage();
+        }
+
+
+    }
+
     public function StoreContact()
     {
-            $data = request()->validate([
-                'fsurname' => 'required',
-                'fname' => 'required',
-            ]);
+        $data = request()->validate([
+            'fsurname' => 'required',
+            'fname' => 'required',
+            'mail' => 'required',
+            'subject' => 'required',
+            'message' => 'required'
+        ]);
+        Mail::to('francois.biron@viacesi.fr')->send(new ContactMail($data));
+        return redirect('/');
     }
 
     public function SlalomDisplay()

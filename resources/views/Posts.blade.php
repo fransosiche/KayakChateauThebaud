@@ -23,11 +23,11 @@
                 @foreach($data as $key=> $data)
                     <div class="col-md-4 animate-box">
                         <article class="article-entry">
-                            <a href="" class="blog-img"
-                               style="background-image: url( images/{{$data -> Pic_URL	}} );">
+                            <a href="Actualités/{{$data -> id}}" class="blog-img"
+                               style="background-image: url( {{ url('/images')}}/{{$data->Pic_URL}} );">
                             </a>
                             <div class="desc">
-                                <h2><a href="#">{{$data -> Title	}}</a></h2>
+                                <h2><a href="Actualités/{{$data -> id}}">{{$data -> Title}}</a></h2>
                                 <p>{{$data -> Description}}</p>
                             </div>
                         </article>
