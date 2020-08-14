@@ -20,6 +20,13 @@ body {
     background: #fff;
 }
 
+hr {
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    border: 0;
+    border-top: 1px solid rgba(0, 0, 0, 0.1);
+}
+
 #page {
     position: relative;
     overflow-x: hidden;
@@ -173,13 +180,23 @@ select::-ms-expand {
 .selectt {
     position: relative;
     display: flex;
-    width: 60em;
+    width: 50em;
     height: 4em;
     line-height: 3;
     background: #bdc330;
     overflow: hidden;
     border-radius: .25em;
 }
+
+@media only screen and (max-width: 760px), (min-width: 768px) and (max-width: 1024px) {
+    .selectt {
+        width: 15em;
+        }
+    .select {
+        width: 15em;
+    }
+}
+
 select {
     flex: 1;
     padding: 0 .5em;
@@ -1628,6 +1645,11 @@ input[type="text"] {
 .form-group label {
     font-weight: 400;
 }
+.form-group .labelnew {
+    font-weight: 600;
+}
+
+
 
 .form-group .btn-modify {
     text-transform: uppercase;

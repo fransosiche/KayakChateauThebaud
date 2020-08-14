@@ -24,6 +24,7 @@ class CreateReservationTable extends Migration
             $table->integer('Kayak2Place')->default('0');
             $table->integer('Canoe2Place')->default('0');
             $table->integer('Canoe4Place')->default('0');
+            $table->integer('Paddle')->default('0');
             $table->Date('Location_Date');
             $table->DateTime('Start_Time_Date');
             $table->DateTime('End_Time_Date');

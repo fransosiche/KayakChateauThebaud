@@ -57,6 +57,15 @@ class CreateCanoeKayakTable extends Migration
             $New_Boat->PlaceInBoat="4";
             $New_Boat->save();
         }
+
+        for ($i = 1; $i <= 8; $i++) {
+
+            $New_Boat = new canoe_kayak();
+
+            $New_Boat->Type="Paddle";
+            $New_Boat->PlaceInBoat="1";
+            $New_Boat->save();
+        }
     }
 
     /**

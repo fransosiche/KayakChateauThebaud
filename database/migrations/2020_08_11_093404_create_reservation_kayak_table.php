@@ -13,7 +13,7 @@ class CreateReservationKayakTable extends Migration
      */
     public function up()
     {
-        Schema::create('reservation_kayak', function (Blueprint $table) {
+        Schema::create('reservation_kayaks', function (Blueprint $table) {
             $table->id();
             $table->DateTime('Start_Time');
             $table->DateTime('End_Time');

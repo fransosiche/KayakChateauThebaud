@@ -58,4 +58,8 @@ Route::post('/Reservation/1H', array('as' => 'OneHourPost', 'uses' => 'Reservati
 
 Route::get('/Reservation/2H', array('as' => 'TwoHoursDislay', 'uses' => 'ReservationController@TwoHoursDisplay'));
 
+Route::post('/Reservation/1H', array('as' => 'OneHourPost', 'uses' => 'ReservationController@StoreReservation'));
+
+Route::post('/Reservation/Canoe-Kayak-Reservation/{id}', array('as' => 'EndReservation', 'uses' => 'ReservationController@ReservationBoat'));
+
 

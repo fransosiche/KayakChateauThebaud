@@ -2,7 +2,9 @@
 
 namespace App\Http\Controllers;
 
+use App\canoe_kayak;
 use App\reservation;
+use App\reservation_kayak;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 
@@ -36,26 +38,28 @@ class ReservationController extends Controller
         $New_reservation->End_Time_Date = $_POST['jour'] . " " . $Explode[1];
         $New_reservation->save();
 
-        $ID_Taken_Boat = DB::select(DB::raw("SELECT reservation_kayak.ID_Kayak FROM reservation_kayak, reservations WHERE
-        (reservations.Start_Time_Date BETWEEN reservation_kayak.Start_Time AND reservation_kayak.End_Time) AND reservations.id ='$New_reservation->id'"));
-        dd($ID_Taken_Boat);
+        $ID_Taken_Boat = DB::select(DB::raw("SELECT reservation_kayaks.ID_Kayak FROM reservation_kayaks, reservations WHERE
+        (reservations.Start_Time_Date BETWEEN reservation_kayaks.Start_Time AND reservation_kayaks.End_Time) AND reservations.id ='$New_reservation->id'"));
 
         $Count = 0;
         foreach ($ID_Taken_Boat as $key) {
-            if (DB::table('canoe_kayaks')->where('Type', '=', 'Kayak')->where('PlaceInBoat', '=', '1')
-                    ->where('id', '=', $key->ID_Kayak)->get() != null) {
+            $result = DB::table('canoe_kayaks')->where('Type', '=', 'Kayak')->where('PlaceInBoat', '=', '1')
+                ->where('id', '=', $key->ID_Kayak)->get();
+            if ($result->isEmpty()) {
+            } else {
                 $Count = $Count + 1;
             }
         }
-
         $KayakOnePlaceInDB = DB::table('canoe_kayaks')->where('Type', '=', 'Kayak')->where('PlaceInBoat', '=', '1')->get()->count();
-
         $KayakOnePlaceAvailable = $KayakOnePlaceInDB - $Count;
+
 
         $Count = 0;
         foreach ($ID_Taken_Boat as $key) {
-            if (DB::table('canoe_kayaks')->where('Type', '=', 'Kayak')->where('PlaceInBoat', '=', '2')
-                    ->where('id', '=', $key->ID_Kayak)->get() != null) {
+            $result = DB::table('canoe_kayaks')->where('Type', '=', 'Kayak')->where('PlaceInBoat', '=', '2')
+                ->where('id', '=', $key->ID_Kayak)->get();
+            if ($result->isEmpty()) {
+            } else {
                 $Count = $Count + 1;
             }
         }
@@ -67,8 +71,10 @@ class ReservationController extends Controller
 
         $Count = 0;
         foreach ($ID_Taken_Boat as $key) {
-            if (DB::table('canoe_kayaks')->where('Type', '=', 'Canoe')->where('PlaceInBoat', '=', '2')
-                    ->where('id', '=', $key->ID_Kayak)->get() != null) {
+            $result = DB::table('canoe_kayaks')->where('Type', '=', 'Canoe')->where('PlaceInBoat', '=', '2')
+                ->where('id', '=', $key->ID_Kayak)->get();
+            if ($result->isEmpty()) {
+            } else {
                 $Count = $Count + 1;
             }
         }
@@ -80,8 +86,10 @@ class ReservationController extends Controller
 
         $Count = 0;
         foreach ($ID_Taken_Boat as $key) {
-            if (DB::table('canoe_kayaks')->where('Type', '=', 'Canoe')->where('PlaceInBoat', '=', '4')
-                    ->where('id', '=', $key->ID_Kayak)->get() != null) {
+            $result = DB::table('canoe_kayaks')->where('Type', '=', 'Canoe')->where('PlaceInBoat', '=', '4')
+                ->where('id', '=', $key->ID_Kayak)->get();
+            if ($result->isEmpty()) {
+            } else {
                 $Count = $Count + 1;
             }
         }
@@ -90,10 +98,140 @@ class ReservationController extends Controller
 
         $CanoeFoursPlaceAvailable = $CanoeFoursPlacesInDB - $Count;
 
+        $Count = 0;
+        foreach ($ID_Taken_Boat as $key) {
+            $result = DB::table('canoe_kayaks')->where('Type', '=', 'Paddle')->where('PlaceInBoat', '=', '1')
+                ->where('id', '=', $key->ID_Kayak)->get();
+            if ($result->isEmpty()) {
+            } else {
+                $Count = $Count + 1;
+            }
+        }
 
-        return view('/Reservations/Canoe-Kayak-Reservation', compact('KayakOnePlaceAvailable', 'KayakTwoPlaceAvailable', 'CanoeTwoPlaceAvailable', 'CanoeFoursPlaceAvailable'));
+        $PaddleInDB = DB::table('canoe_kayaks')->where('Type', '=', 'Paddle')->where('PlaceInBoat', '=', '1')->get()->count();
+
+        $PaddleAvailable = $PaddleInDB - $Count;
+
+        $id = $New_reservation->id;
+
+        return view('/Reservations/Canoe-Kayak-Reservation', compact('KayakOnePlaceAvailable', 'KayakTwoPlaceAvailable',
+            'CanoeTwoPlaceAvailable', 'CanoeFoursPlaceAvailable', 'PaddleAvailable', 'id'));
     }
 
+
+    public function ReservationBoat($id)
+    {
+        $KayakOnePlace = $_POST['KayakOnePlace'];
+        $KayakTwoPlace = $_POST['KayakTwoPlace'];
+        $CanoeTwoPlace = $_POST['CanoeTwoPlace'];
+        $CanoeFoursPlace = $_POST['CanoeFoursPlace'];
+        $Paddle = $_POST['Paddle'];
+
+        DB::table('reservations')->where('id', $id)
+            ->update(['Kayak1place' => $KayakOnePlace,
+                'Kayak2Place' => $KayakTwoPlace,
+                'Canoe2Place' => $CanoeTwoPlace,
+                'Canoe4Place' => $CanoeFoursPlace,
+                'Paddle' => $Paddle,
+            ]);
+
+        $data = DB::table('reservations')->where('id', $id)->get();
+        $Start_Time_Date = $data[0]->Start_Time_Date;
+        $End_Time_Date = $data[0]->End_Time_Date;
+
+        $count = DB::table('reservation_kayaks')->count();
+
+        if ($count == 0) {
+            $ID_Kayak_One_Place_Available = DB::table('canoe_kayaks')->where('PlaceInBoat', '=', 1)
+                ->where('Type', '=', 'Kayak')->get();
+            $ID_Kayak_Two_Place_Available = DB::table('canoe_kayaks')->where('PlaceInBoat', '=', 2)
+                ->where('Type', '=', 'Kayak')->get();
+            $ID_Canoe_Two_Place_Available = DB::table('canoe_kayaks')->where('PlaceInBoat', '=', 2)
+                ->where('Type', '=', 'Canoe')->get();
+            $ID_Canoe_Four_Place_Available = DB::table('canoe_kayaks')->where('PlaceInBoat', '=', 4)
+                ->where('Type', '=', 'Canoe')->get();
+            $ID_Paddle_Available = DB::table('canoe_kayaks')->where('PlaceInBoat', '=', 1)
+                ->where('Type', '=', 'Paddle')->get();
+
+        } else {
+
+            $ID_Kayak_One_Place_Available = DB::select(DB::raw("SELECT canoe_kayaks.id FROM (SELECT reservation_kayaks.ID_Kayak FROM reservation_kayaks,
+            reservations WHERE (reservations.Start_Time_Date BETWEEN reservation_kayaks.Start_Time
+            AND reservation_kayaks.End_Time) AND reservations.id = '$id') as t1 RIGHT OUTER JOIN canoe_kayaks
+            ON T1.ID_Kayak = canoe_kayaks.id WHERE T1.ID_Kayak IS NULL AND canoe_kayaks.Type = 'Kayak' AND
+            canoe_kayaks.PlaceInBoat = 1"));
+
+            $ID_Kayak_Two_Place_Available = DB::select(DB::raw("SELECT canoe_kayaks.id FROM (SELECT reservation_kayaks.ID_Kayak FROM reservation_kayaks,
+            reservations WHERE (reservations.Start_Time_Date BETWEEN reservation_kayaks.Start_Time
+            AND reservation_kayaks.End_Time) AND reservations.id = '$id') as t1 RIGHT OUTER JOIN canoe_kayaks
+            ON T1.ID_Kayak = canoe_kayaks.id WHERE T1.ID_Kayak IS NULL AND canoe_kayaks.Type = 'Kayak' AND
+            canoe_kayaks.PlaceInBoat = 2"));
+
+            $ID_Canoe_Two_Place_Available = DB::select(DB::raw("SELECT canoe_kayaks.id FROM (SELECT reservation_kayaks.ID_Kayak FROM reservation_kayaks,
+            reservations WHERE (reservations.Start_Time_Date BETWEEN reservation_kayaks.Start_Time
+            AND reservation_kayaks.End_Time) AND reservations.id = '$id') as t1 RIGHT OUTER JOIN canoe_kayaks
+            ON T1.ID_Kayak = canoe_kayaks.id WHERE T1.ID_Kayak IS NULL AND canoe_kayaks.Type = 'Canoe' AND
+            canoe_kayaks.PlaceInBoat = 2"));
+
+            $ID_Canoe_Four_Place_Available = DB::select(DB::raw("SELECT canoe_kayaks.id FROM (SELECT reservation_kayaks.ID_Kayak FROM reservation_kayaks,
+            reservations WHERE (reservations.Start_Time_Date BETWEEN reservation_kayaks.Start_Time
+            AND reservation_kayaks.End_Time) AND reservations.id = '$id') as t1 RIGHT OUTER JOIN canoe_kayaks
+            ON T1.ID_Kayak = canoe_kayaks.id WHERE T1.ID_Kayak IS NULL AND canoe_kayaks.Type = 'Canoe' AND
+            canoe_kayaks.PlaceInBoat = 4"));
+
+            $ID_Paddle_Available = DB::select(DB::raw("SELECT canoe_kayaks.id FROM (SELECT reservation_kayaks.ID_Kayak FROM reservation_kayaks,
+            reservations WHERE (reservations.Start_Time_Date BETWEEN reservation_kayaks.Start_Time
+            AND reservation_kayaks.End_Time) AND reservations.id = '$id') as t1 RIGHT OUTER JOIN canoe_kayaks
+            ON T1.ID_Kayak = canoe_kayaks.id WHERE T1.ID_Kayak IS NULL AND canoe_kayaks.Type = 'Paddle' AND
+            canoe_kayaks.PlaceInBoat = 1"));
+
+        }
+
+        for ($i = 1; $i <= $KayakOnePlace; $i++) {
+            $New_reservation_kayak = new reservation_kayak();
+            $New_reservation_kayak->Start_Time = $Start_Time_Date;
+            $New_reservation_kayak->End_Time = $End_Time_Date;
+            $New_reservation_kayak->ID_Reservation = $id;
+            $New_reservation_kayak->ID_Kayak = $ID_Kayak_One_Place_Available[$i - 1]->id;
+            $New_reservation_kayak->save();
+        }
+
+        for ($i = 1; $i <= $KayakTwoPlace; $i++) {
+            $New_reservation_kayak = new reservation_kayak();
+            $New_reservation_kayak->Start_Time = $Start_Time_Date;
+            $New_reservation_kayak->End_Time = $End_Time_Date;
+            $New_reservation_kayak->ID_Reservation = $id;
+            $New_reservation_kayak->ID_Kayak = $ID_Kayak_Two_Place_Available[$i - 1]->id;
+            $New_reservation_kayak->save();
+        }
+
+        for ($i = 1; $i <= $CanoeTwoPlace; $i++) {
+            $New_reservation_kayak = new reservation_kayak();
+            $New_reservation_kayak->Start_Time = $Start_Time_Date;
+            $New_reservation_kayak->End_Time = $End_Time_Date;
+            $New_reservation_kayak->ID_Reservation = $id;
+            $New_reservation_kayak->ID_Kayak = $ID_Canoe_Two_Place_Available[$i - 1]->id;
+            $New_reservation_kayak->save();
+        }
+        for ($i = 1; $i <= $CanoeFoursPlace; $i++) {
+            $New_reservation_kayak = new reservation_kayak();
+            $New_reservation_kayak->Start_Time = $Start_Time_Date;
+            $New_reservation_kayak->End_Time = $End_Time_Date;
+            $New_reservation_kayak->ID_Reservation = $id;
+            $New_reservation_kayak->ID_Kayak = $ID_Canoe_Four_Place_Available[$i - 1]->id;
+            $New_reservation_kayak->save();
+        }
+        for ($i = 1; $i <= $Paddle; $i++) {
+            $New_reservation_kayak = new reservation_kayak();
+            $New_reservation_kayak->Start_Time = $Start_Time_Date;
+            $New_reservation_kayak->End_Time = $End_Time_Date;
+            $New_reservation_kayak->ID_Reservation = $id;
+            $New_reservation_kayak->ID_Kayak = $ID_Paddle_Available[$i]->id;
+            $New_reservation_kayak->save();
+        }
+
+        return redirect('/');
+    }
 
     public function TwoHoursDisplay()
     {
@@ -108,11 +246,6 @@ class ReservationController extends Controller
     public function HeightHoursDisplay()
     {
         return view('Reservations/Reservation-DemiJournee');
-    }
-
-    public function WeekdEndDislay()
-    {
-        return view('');
     }
 }
 
