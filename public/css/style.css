@@ -162,6 +162,18 @@ select {
     background: #f2f3f7;
     background-image: none;
 }
+
+.selectV {
+    position: relative;
+    display: flex;
+    width: 20em;
+    height: 3em;
+    line-height: 3;
+    background: #bdc330;
+    overflow: hidden;
+    border-radius: .25em;
+}
+
 /* Remove IE arrow */
 select::-ms-expand {
     display: none;
@@ -195,6 +207,9 @@ select::-ms-expand {
     .select {
         width: 15em;
     }
+    .selectV {
+        width: 15em;
+    }
 }
 
 select {
@@ -217,6 +232,8 @@ select {
     -o-transition: .25s all ease;
     transition: .25s all ease;
 }
+
+
 /* Transition */
 .select:hover::after {
     color: #a1a62d;

@@ -23,11 +23,11 @@
                                 </a></li>
                         </ul>
                         <ul class="week">
-                            <li class="active"><a style="font-size : 20px" href="/"> 4 heures
+                            <li class="active"><a style="font-size : 20px" href="/Reservation/4H"> 4 heures
                                 </a></li>
                         </ul>
                         <ul class="week">
-                            <li class="active"><a style="font-size : 20px" href="/"> Journée
+                            <li class="active"><a style="font-size : 20px" href="/Reservation/Journee"> Journée
                                 </a></li>
                         </ul>
 
@@ -37,31 +37,35 @@
             <div class="row">
                 <div class="col-md-4 animate-box">
                     <div class="classes">
-                        <div class="classes-img" style="background-image: url(images/classes-1.jpg);">
+                        <div class="classes-img" style="background-image: url({{ url('/images/classes-1.jpg')}});">
                         </div>
                         <div class="desc">
                             <h3>Kayaks</h3>
-                            <p>Location de kayak insubmersible et submersible 1 place jusqu'à 2 places</p>
+                            <p>Location de kayak insubmersible ou fermé 1 place jusqu'à 2 places. Le kayak se manoeuvre
+                                avec une pagaie double en position assise.</p>
                         </div>
                     </div>
                 </div>
                 <div class="col-md-4 animate-box">
                     <div class="classes">
-                        <div class="classes-img" style="background-image: url(images/classes-2.jpg);">
+                        <div class="classes-img" style="background-image: url({{ url('/images/classes-2.jpg')}});">
                         </div>
                         <div class="desc">
                             <h3>Paddle</h3>
-                            <p>Location de paddle</p>
+                            <p>Location de paddle. C'est un sport de glisse nautique où le pratiquant se tient debout
+                                (stand up en anglais) sur une planche plus longue qu'une planche de surf classique, se
+                                propulsant à l'aide d'une pagaie (paddle).</p>
                         </div>
                     </div>
                 </div>
                 <div class="col-md-4 animate-box">
                     <div class="classes">
-                        <div class="classes-img" style="background-image: url(images/classes-3.jpg);">
+                        <div class="classes-img" style="background-image: url({{ url('/images/classes-3.jpg')}});">
                         </div>
                         <div class="desc">
                             <h3>Canoë</h3>
-                            <p>Location de canoë de 2 à 4 places.</p>
+                            <p>Location de canoë de 2 à 4 places. Les canoës se manoeuvrent à l'aide de pagaie simple (à
+                                l'inverse du kayak) en position assise souvent plus haute.</p>
                         </div>
                     </div>
                 </div>

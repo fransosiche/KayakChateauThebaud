@@ -30,7 +30,7 @@ class CreateUsersTable extends Migration
 
         $New_User->name="François Biron";
         $New_User->email="francois.biron@viacesi.fr";
-        $New_User->password=Hash::make("Qovjei2qv@");
+        $New_User->password=Hash::make("test123");
         $New_User->is_admin="1";
         $New_User->save();
     }

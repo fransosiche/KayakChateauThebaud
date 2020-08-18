@@ -7,7 +7,7 @@
             <div class="row">
                 <div class="col-md-10 col-md-offset-1 animate-box">
                     <h2>Veuillez renseigner les informations</h2>
-                    <form action="/Reservation/2H" method="POST">
+                    <form action="/Reservation/StoreReservation" method="POST">
                         @csrf
                         <div class="row form-group">
                             <div class="col-md-6">
@@ -62,6 +62,19 @@
                                 @enderror
                             </div>
                         </div>
+
+                        <div class="row form-group">
+                            <div class="col-md-12">
+                                <input name="phone" type="tel" id="phone"
+                                       class="form-control @error('phone') is-invalid @enderror"
+                                       placeholder="{{ __('Votre numéro de téléphone') }}" required autocomplete="phone">
+                                @error('phone')
+                                <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                                @enderror
+                            </div>
+                        </div>
                         <div class="row form-group">
                             <div class="col-md-12">
                                 <label for="jour">Choisissez le jour de la réservation</label>
@@ -80,10 +93,10 @@
                                 <div class="select">
                                     <select name="slct" id="slct" required>
                                         <option value="" selected disabled>Choisissez votre créneau horaire</option>
-                                        <option value="10:00">10H - 12H</option>
-                                        <option value="12:00">12H - 14H</option>
-                                        <option value="14:00">14H - 16H</option>
-                                        <option value="16:00">16H - 18H</option>
+                                        <option value="10:00:00|12:00:00">10H - 12H</option>
+                                        <option value="12:00:00|14:00:00">12H - 14H</option>
+                                        <option value="14:00:00|16:00:00">14H - 16H</option>
+                                        <option value="16:00:00|18:00:00">16H - 18H</option>
                                     </select>
                                 </div>
                             </div>

@@ -90,15 +90,10 @@
                         </div>
                         <div class="row form-group">
                             <div class="col-md-12">
-                                <div class="select">
+                                <label>Votre créneau horaire</label>
+                                <div class="selectV">
                                     <select name="slct" id="slct" required>
-                                        <option value="" selected disabled>Choisissez votre créneau horaire</option>
-                                        <option value="10:00:00|11:00:00">10H - 11H</option>
-                                        <option value="11:00:00|12:00:00">11H - 12H</option>
-                                        <option value="14:00:00|15:00:00">14H - 15H</option>
-                                        <option value="15:00:00|16:00:00">15H - 16H</option>
-                                        <option value="16:00:00|17:00:00">16H - 17H</option>
-                                        <option value="17:00:00|18:00:00">17H - 18H</option>
+                                        <option value="10:00:00|18:00:00" selected disabled>10H - 18H</option>
                                     </select>
                                 </div>
                             </div>

@@ -54,12 +54,17 @@ Route::get('/Actualités/{ID}', array('as' => 'Actualités_Items', 'uses' => 'Ma
 Route::get('/Reservation', array('as' => 'Reservation', 'uses' => 'ReservationController@ReservationDisplay'));
 
 Route::get('/Reservation/1H', array('as' => 'OneHourDislay', 'uses' => 'ReservationController@OneHourDislay'));
-Route::post('/Reservation/1H', array('as' => 'OneHourPost', 'uses' => 'ReservationController@StoreReservation'));
-
 Route::get('/Reservation/2H', array('as' => 'TwoHoursDislay', 'uses' => 'ReservationController@TwoHoursDisplay'));
+Route::get('/Reservation/4H', array('as' => 'FoursHoursDisplay', 'uses' => 'ReservationController@FoursHoursDisplay'));
+Route::get('/Reservation/Journee', array('as' => 'HeightHoursDisplay', 'uses' => 'ReservationController@HeightHoursDisplay'));
 
-Route::post('/Reservation/1H', array('as' => 'OneHourPost', 'uses' => 'ReservationController@StoreReservation'));
+Route::post('/Reservation/StoreReservation', array('as' => 'OneHourPost', 'uses' => 'ReservationController@StoreReservation'));
 
 Route::post('/Reservation/Canoe-Kayak-Reservation/{id}', array('as' => 'EndReservation', 'uses' => 'ReservationController@ReservationBoat'));
+
+######### ADMIN  ############
+
+Route::get('/Admin/{date}', array('as' => 'Admin', 'uses' => 'AdminController@AdminDisplay'));
+Route::get('/PrintPDF/{date}', array('as' => 'PrintPDF', 'uses' => 'AdminController@PRINT'));
 
 

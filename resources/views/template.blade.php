@@ -95,8 +95,12 @@
                                 <li><a href="/register" class="nav-link">S'enregister</a></li>
                             @else
                                 <li><a> Bonjour {{ Auth::user() -> name }}</a></li>
-                                <li><a href="/logout">Se Deconnecter</a></li>
+                                <li><a href="/logout">Déconnexion</a></li>
                             @endif
+                            @if (Auth::check() && Auth::user()->is_admin)
+                                <li><a href="/Admin/{{ date("Y-m-d")  }}">Admin</a></li>
+                            @endif
+
                         </ul>
                     </div>
                 </div>
@@ -113,7 +117,8 @@
                             <div class="col-md-8 col-sm-12 col-md-offset-2 slider-text">
                                 <div class="slider-text-inner text-center">
                                     <h1>Bienvenue sur le site de l'ALCKCT</h1>
-                                    <p><a href="/Reservation" class="btn btn-primary btn-lg btn-learn">Louer dés maintenant</a></p>
+                                    <p><a href="/Reservation" class="btn btn-primary btn-lg btn-learn">Louer dés
+                                            maintenant</a></p>
                                 </div>
                             </div>
                         </div>

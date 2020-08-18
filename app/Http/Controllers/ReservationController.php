@@ -3,22 +3,16 @@
 namespace App\Http\Controllers;
 
 use App\canoe_kayak;
+use App\Mail\ReservationALCKCT;
+use App\Mail\ReservationToCust;
 use App\reservation;
 use App\reservation_kayak;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Mail;
 
 class ReservationController extends Controller
 {
-    public function ReservationDisplay()
-    {
-        return view('Reservation');
-    }
-
-    public function OneHourDislay()
-    {
-        return view('Reservations/Reservation-1H');
-    }
 
     public function StoreReservation()
     {
@@ -230,7 +224,22 @@ class ReservationController extends Controller
             $New_reservation_kayak->save();
         }
 
+        $data = DB::table('reservations')->where('id', $id)->get();
+
+        Mail::to($data[0]->Email)->send(new ReservationToCust((array)$data[0]));
+        Mail::to('fransosichewot@gmail.com')->send(new ReservationALCKCT((array)$data[0]));
+        
         return redirect('/');
+    }
+
+    public function ReservationDisplay()
+    {
+        return view('Reservation');
+    }
+
+    public function OneHourDislay()
+    {
+        return view('Reservations/Reservation-1H');
     }
 
     public function TwoHoursDisplay()
@@ -245,7 +254,7 @@ class ReservationController extends Controller
 
     public function HeightHoursDisplay()
     {
-        return view('Reservations/Reservation-DemiJournee');
+        return view('Reservations/Reservation-Journee');
     }
 }
 
