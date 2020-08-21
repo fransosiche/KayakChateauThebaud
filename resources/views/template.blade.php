@@ -26,6 +26,7 @@
 
     <!-- Animate.css -->
     <link rel="stylesheet" href="{{asset('css/animate.css')}}">
+    <link rel="stylesheet" href="{{asset('css/toastr.min.css')}}">
     <!-- Icomoon Icon Fonts-->
     <link rel="stylesheet" href="{{asset('css/icomoon.css')}}">
     <!-- Bootstrap  -->
@@ -49,10 +50,7 @@
 
     <!-- Modernizr JS -->
     <script src="{{asset('js/modernizr-2.6.2.min.js')}}"></script>
-    <!-- FOR IE9 below -->
-<!--[if lt IE 9]>
-    <script src="{{asset('js/respond.min.js')}}"></script>
-    <![endif]-->
+
 
 </head>
 <body>
@@ -183,7 +181,7 @@
                     <ul class="colorlib-social-icons">
                         <li><a href="https://www.facebook.com/ALCKCT"><i class="icon-facebook"></i></a></li>
                     </ul>
-                    </p>
+
                 </div>
                 <div class="col-md-3 colorlib-widget">
                     <h4>Liens rapides</h4>
@@ -192,9 +190,9 @@
                         <li><a href="/"><i class="icon-check"></i> Accueil</a></li>
                         <li><a href="/Actualites"><i class="icon-check"></i> Actualités</a></li>
                         <li><a href="/Reservation"><i class="icon-check"></i> Locations</a></li>
-                        <li><a href="#"><i class="icon-check"></i> Conditions d'utilisations</a></li>
+                        <li><a href="/Conditions"><i class="icon-check"></i> Conditions d'utilisations</a></li>
                     </ul>
-                    </p>
+
                 </div>
 
                 <div class="col-md-3 colorlib-widget">
@@ -279,9 +277,14 @@
 <script src="{{asset('js/magnific-popup-options.js')}}"></script>
 <!-- Counters -->
 <script src="{{asset('js/jquery.countTo.js')}}"></script>
+<script src="{{asset('js/toastr.min.js')}}"></script>
+<!-- FOR IE9 below -->
+<!--[if lt IE 9]>
+<script src="{{asset('js/respond.min.js')}}"></script>
+<![endif]-->
 <!-- Main -->
 <script src="{{asset('js/main.js')}}"></script>
-
+@toastr_render
 </body>
 </html>
 

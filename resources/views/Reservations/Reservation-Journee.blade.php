@@ -93,7 +93,7 @@
                                 <label>Votre créneau horaire</label>
                                 <div class="selectV">
                                     <select name="slct" id="slct" required>
-                                        <option value="10:00:00|18:00:00" selected disabled>10H - 18H</option>
+                                        <option value="10:00:00|18:00:00" selected>10H - 18H</option>
                                     </select>
                                 </div>
                             </div>

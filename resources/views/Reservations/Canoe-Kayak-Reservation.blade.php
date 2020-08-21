@@ -64,7 +64,7 @@
                                 <label class="labelnew">Paddle</label>
                                 <div class="selectt">
                                     <select name="Paddle" id="Paddle" required>
-                                        <option value="" selected disabled>Choisissez le nombre de Paddle que
+                                        <option value="0" selected disabled>Choisissez le nombre de Paddle que
                                             vous souhaitez
                                         </option>
                                         @for( $i = 0; $i<=$PaddleAvailable; $i++)

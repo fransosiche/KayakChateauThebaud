@@ -2,9 +2,11 @@
 
 namespace App\Http\Controllers;
 
+use DateTime;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
 use Barryvdh\DomPDF\Facade as PDF;
+use Illuminate\Http\Request;
 
 class AdminController extends Controller
 {
@@ -21,13 +23,23 @@ class AdminController extends Controller
 
     public function PRINT($DATE)
     {
-        // This  $data array will be passed to our PDF blade
-        #$data = DB::table('reservations')->where('Location_Date', $DATE)->get();
-        $data = [
-            'data' => DB::table('reservations')->where('Location_Date', $DATE)->get()
-        ];
+        if (Auth::user() == null || Auth::user()->is_admin != 1) {
+            return redirect('/');
+        } else {
+            $data = [
+                'data' => DB::table('reservations')->where('Location_Date', $DATE)->get()
+            ];
 
-        $pdf = PDF::loadView('Admin/PdfView', $data);
-        return $pdf->download('Location' . $DATE . '.pdf');
+            $pdf = PDF::loadView('Admin/PdfView', $data);
+            $myDateTime = DateTime::createFromFormat('Y-m-d', $DATE)->format('d-m-Y');
+            return $pdf->download('Location-' . $myDateTime . '.pdf');
+        }
+    }
+
+    public function AdminChangeDate(Request $request)
+    {
+        $DATE = $request->input('jour');
+
+        return redirect('/Admin/' . $DATE);
     }
 }

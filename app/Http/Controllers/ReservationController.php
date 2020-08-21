@@ -2,17 +2,60 @@
 
 namespace App\Http\Controllers;
 
-use App\canoe_kayak;
 use App\Mail\ReservationALCKCT;
 use App\Mail\ReservationToCust;
 use App\reservation;
 use App\reservation_kayak;
-use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Mail;
 
+
 class ReservationController extends Controller
 {
+    public function ReservationDisplay()
+    {
+        $today = date('Y-m-d');
+        $today = date('Y-m-d', strtotime($today));
+        $startDate = date('Y-m-d', strtotime("2020/05/01"));
+        $endDate = date('Y-m-d', strtotime("2020/10/15"));
+        $dayOfWeek = date('l');
+
+        if (($today >= $startDate) && ($today <= $endDate)) {
+            if ($dayOfWeek == "Saturday" || $dayOfWeek == "Sunday") {
+                toastr()->warning('Les réservations via le site internet ne sont pas disponibles le week-end');
+                return redirect('/');
+            } else {
+                return view('Reservation');
+            }
+        } else {
+            toastr()->warning('Les locations sont disponible de mi-Mai à mi-Octobre seulement');
+            return redirect('/');
+        }
+    }
+
+    public
+    function OneHourDislay()
+    {
+        return view('Reservations/Reservation-1H');
+    }
+
+    public
+    function TwoHoursDisplay()
+    {
+        return view('Reservations/Reservation-2H');
+    }
+
+    public
+    function FoursHoursDisplay()
+    {
+        return view('Reservations/Reservation-4H');
+    }
+
+    public
+    function HeightHoursDisplay()
+    {
+        return view('Reservations/Reservation-Journee');
+    }
 
     public function StoreReservation()
     {
@@ -228,33 +271,12 @@ class ReservationController extends Controller
 
         Mail::to($data[0]->Email)->send(new ReservationToCust((array)$data[0]));
         Mail::to('fransosichewot@gmail.com')->send(new ReservationALCKCT((array)$data[0]));
-        
+
+        toastr()->success('Réservation effectuée ! Vous allez recevoir un mail de confirmation prochainement.');
+
         return redirect('/');
     }
 
-    public function ReservationDisplay()
-    {
-        return view('Reservation');
-    }
 
-    public function OneHourDislay()
-    {
-        return view('Reservations/Reservation-1H');
-    }
-
-    public function TwoHoursDisplay()
-    {
-        return view('Reservations/Reservation-2H');
-    }
-
-    public function FoursHoursDisplay()
-    {
-        return view('Reservations/Reservation-4H');
-    }
-
-    public function HeightHoursDisplay()
-    {
-        return view('Reservations/Reservation-Journee');
-    }
 }
 

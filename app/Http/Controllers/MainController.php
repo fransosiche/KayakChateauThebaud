@@ -11,6 +11,7 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Mail;
 use Kris\LaravelFormBuilder\FormBuilder;
+use Session;
 
 class MainController extends Controller
 {
@@ -66,13 +67,20 @@ class MainController extends Controller
             'subject' => 'required',
             'message' => 'required'
         ]);
-        Mail::to('francois.biron@viacesi.fr')->send(new ContactMail($data));
+        Mail::to('alckct44@gmail.com')->send(new ContactMail($data));
+        toastr()->success('Mail envoyé !');
+
         return redirect('/');
     }
 
     public function SlalomDisplay()
     {
         return view('Slalom');
+    }
+
+    public function ConditionsDisplay()
+    {
+        return view('Conditions');
     }
 
     public function KayakPoloDisplay()
@@ -142,6 +150,8 @@ class MainController extends Controller
             } else {
                 return redirect('/');
             }
+            toastr()->success('Post créé et ajouté ! ');
+
             return redirect('/');
         }
     }
@@ -166,6 +176,7 @@ class MainController extends Controller
             }
 
         }
+        toastr()->success('Post supprimé avec succès !');
 
         return redirect('/');
     }
@@ -206,6 +217,8 @@ class MainController extends Controller
             } else {
                 return redirect('/');
             }
+            toastr()->success('Post mis à jour avec succès !');
+
             return redirect('/');
         }
     }

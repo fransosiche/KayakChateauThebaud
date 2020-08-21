@@ -30,7 +30,7 @@ class ReservationToCust extends Mailable
      */
     public function build()
     {
-        return $this->from('Canoe-Kayak-Chateau-Thebaud@ALCKCT.com')
+        return $this->from('alckct44@gmail.com')
             ->subject('Votre réservation a bien été prise en compte')
             ->view('emails.contact.reservation-form-to-cust')
             ->with('data', $this->data);
