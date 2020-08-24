@@ -66,7 +66,8 @@ Route::post('/Reservation/Canoe-Kayak-Reservation/{id}', array('as' => 'EndReser
 ######### ADMIN  ############
 
 Route::get('/Admin/{date}', array('as' => 'Admin', 'uses' => 'AdminController@AdminDisplay'));
-Route::post('/Admin/Test', array('as' => 'AdminDateChangement', 'uses' => 'AdminController@AdminChangeDate'));
+Route::post('/Admin/ChangeDate', array('as' => 'AdminDateChangement', 'uses' => 'AdminController@AdminChangeDate'));
 Route::get('/PrintPDF/{date}', array('as' => 'PrintPDF', 'uses' => 'AdminController@PRINT'));
+Route::get('/Admin/DeleteReservation/{id}/{date}', array('as' => 'DeleteReservation', 'uses' => 'AdminController@DeleteReservation'));
 
 

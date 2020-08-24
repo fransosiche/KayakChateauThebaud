@@ -42,4 +42,27 @@ class AdminController extends Controller
 
         return redirect('/Admin/' . $DATE);
     }
+
+    public function DeleteReservation($id, $DATE)
+    {
+        if (Auth::user() == null || Auth::user()->is_admin != 1) {
+
+            return redirect('/');
+        } else {
+            try {
+
+                DB::table('reservations')->where('id', $id)->delete();
+                DB::table('reservation_kayaks')->where('ID_Reservation', $id)->delete();
+
+            } catch (Exception $e) {
+                echo $e->getMessage();
+            }
+        }
+        #$data = [
+           # 'data' => DB::table('reservations')->where('Location_Date', $DATE)->get()];
+        toastr()->success('Réservation supprimée !');
+
+        #return view('Admin/Admin', compact('data'));
+        return redirect('/');
+    }
 }

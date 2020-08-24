@@ -18,6 +18,7 @@
                 <div class="col-md-8 col-md-offset-2 text-center colorlib-heading animate-box">
                     <h2>Horaires</h2>
                     <p>Voici les horaires d'ouvertures du club pour les locations de kayak.</p>
+                    <p> Locations disponibles de début Mai à mi Octobre.</p>
                 </div>
             </div>
             <div class="row">
@@ -99,9 +100,10 @@
             <div class="row">
                 <div class="col-md-8 col-md-offset-2 text-center colorlib-heading animate-box">
                     <h2>Nos embarcations & tarifs pour les locations</h2>
-                    <p>La location se fera uniquement sur réservation via internet ou au 02.40.06.54.07. Ouverture le 13
-                        juin.
-                        Port du masque obligatoire à l’accueil </p>
+                    <p>Les locations se feront uniquement sur réservation via internet ou au 02.40.06.54.07,
+                        elles sont disponibles de début Mai à mi Octobre. Les réservations sur internet sont
+                        indisponible durant le week-end.
+                        Port du masque obligatoire à l’accueil. </p>
                 </div>
             </div>
             <div class="row">

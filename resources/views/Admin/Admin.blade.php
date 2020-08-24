@@ -4,7 +4,7 @@
     <div class="colorlib-classes colorlib-light-grey">
         <div class="container">
             <div class="row">
-                <form action="/Admin/Test" method="POST">
+                <form action="/Admin/ChangeDate" method="POST">
                     @csrf
                     <div class="row form-group">
                         <div class="col-md-12">
@@ -29,6 +29,7 @@
                 <table id='tab_customers' class="table table-bordered animate-box">
                     <thead>
                     <tr>
+                        <th scope="col"></th>
                         <th scope="col">Nom</th>
                         <th scope="col">Prénom</th>
                         <th scope="col">Email</th>
@@ -47,6 +48,7 @@
                     <tbody>
                     @foreach($data as $key=> $data)
                         <tr>
+                            <td><a href="DeleteReservation/{{$data -> id}}/{{$data->Location_Date}}">Supprimer</a></td>
                             <td>{{$data -> Name}}</td>
                             <td>{{$data -> Surname}}</td>
                             <td>{{$data -> Email}}</td>

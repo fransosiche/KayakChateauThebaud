@@ -1,7 +1,7 @@
 @extends('template')
 
 @section('content')
-    <div class="colorlib-classes colorlib-light-grey">
+    <div class="colorlib-classes">
         <div class="container">
             <div class="row">
                 <div class="col-md-8 animate-box">

@@ -115,8 +115,6 @@
                             <div class="col-md-8 col-sm-12 col-md-offset-2 slider-text">
                                 <div class="slider-text-inner text-center">
                                     <h1>Bienvenue sur le site de l'ALCKCT</h1>
-                                    <p><a href="/Reservation" class="btn btn-primary btn-lg btn-learn">Louer dés
-                                            maintenant</a></p>
                                 </div>
                             </div>
                         </div>
@@ -130,6 +128,8 @@
                                 <div class="slider-text-inner text-center">
                                     <h1>Vous trouverez sur ces pages les dernières actualités du club de canoë
                                         kayak</h1>
+                                    <p><a href="/Reservation" class="btn btn-primary btn-lg btn-learn">Louer dés
+                                            maintenant</a></p>
                                 </div>
                             </div>
                         </div>
@@ -141,7 +141,7 @@
                         <div class="row">
                             <div class="col-md-6 col-sm-12 col-md-offset-3 slider-text">
                                 <div class="slider-text-inner text-center">
-                                    <h1>Les locations sont disponibles </h1>
+                                    <h1>Locations disponibles de début Mai à mi Octobre </h1>
                                     <p><a href="/Reservation" class="btn btn-primary btn-lg btn-learn">Réserver
                                             maintenant</a></p>
                                 </div>

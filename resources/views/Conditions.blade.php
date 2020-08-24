@@ -7,7 +7,7 @@
 
                 <H2>Editeur du site</H2>
                 <p>
-                    Amicale Laïque Marcel Canonnet de Château-Thébaud ; Association laïque, d'éducation
+                    Site développé par François Biron. Amicale Laïque Marcel Canonnet de Château-Thébaud ; Association laïque, d'éducation
                     populaire, régie par la loi du 1er juillet 1901 et déclarée à la Préfecture de Loire-Atlantique le
                     25 août 1960 sous le n° 6933 ; Parution au JO n° 201 du 30 août 1960.
                 </p>
