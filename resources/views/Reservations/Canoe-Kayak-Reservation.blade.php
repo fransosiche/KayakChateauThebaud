@@ -7,7 +7,7 @@
             <div class="row">
                 <div class="col-md-10 col-md-offset-1 animate-box">
                     <h2> Il ne vous reste plus qu'à choisir votre ou vos embarcations !</h2>
-                    <p> Si vous vous posez des questions sur les embarcations, <a href="/Reservation"> rendez-vous ici !</a></p>
+                    <p> Si vous vous posez des questions sur les embarcations, <a href="/Reservation" target="_blank"> rendez-vous ici !</a></p>
                     <form action="/Reservation/Canoe-Kayak-Reservation/{{ $id }}" method="POST">
                         @csrf
                         <div class="row form-group">

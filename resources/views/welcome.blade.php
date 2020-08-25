@@ -136,7 +136,7 @@
                         </div>
                         <div class="desc">
                             <h3>Canoë</h3>
-                            <p>Location de canoë de 2 à 4 places. Les canoës se manoeuvrent à l'aide de pagaie simple (à
+                            <p>Location de canoë de 2 à 4 places. Les canoës se manoeuvrent à l'aide d'une pagaie simple (à
                                 l'inverse du kayak) en position assise souvent plus haute.</p>
                         </div>
                     </div>

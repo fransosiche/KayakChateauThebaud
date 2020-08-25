@@ -5,9 +5,9 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>Canoë Kayak Château Thébaud</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content=""/>
-    <meta name="keywords" content=""/>
-    <meta name="author" content=""/>
+    <meta name="description" content="Site officiel du club de Canoë-Kayak de Château-Thébaud"/>
+    <meta name="keywords" content="Canoë, Kayak, Château-Thébaud, Loire-Atlantique, Location, Réservation, Cours, Sport, Club, Loisir, Base de Loisir, Pont Caffino, Paddle, 44"/>
+    <meta name="author" content="François Biron"/>
     <link href="{{ asset('images/fav.jpg') }}" rel="icon">
 
 
@@ -205,7 +205,7 @@
                     </div>
                     <div class="f-blog">
                         <div class="desc">
-                            <h2><a style="padding-bottom: 20px" href="https://amicale-mcanonnet.org/">Amical Laïque de
+                            <h2><a style="padding-bottom: 20px" href="https://amicale-mcanonnet.org/">Amicale Laïque de
                                     Château Thébaud </a></h2>
                         </div>
                     </div>
