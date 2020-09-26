@@ -1264,6 +1264,36 @@ select {
     z-index: -1;
     opacity: .5;
 }
+.js-cookie-consent{
+    position: absolute;
+    font-size: 24px;
+    color : white;
+    top:0px;
+    text-align:center;
+    width: 100%;
+    z-index: 9999;
+    background: #a1a62d;
+    /* Old browsers */
+    background: -moz-linear-gradient(45deg, #a1a62d 0%, #0e7d3c 100%);
+    /* FF3.6-15 */
+    background: -webkit-linear-gradient(45deg, #a1a62d 0%, #0e7d3c 100%);
+    /* Chrome10-25,Safari5.1-6 */
+    background: -o-linear-gradient(45deg, #a1a62d 0%, #0e7d3c 100%);
+    background: linear-gradient(45deg, #a1a62d 0%, #0e7d3c 100%);
+    border: solid 0px;
+    padding-top : 15px;
+    padding-bottom: 15px;
+}
+
+.js-cookie-consent-agree{
+    background: white;
+    color : black;
+    padding-left: 20px;
+    padding-right: 20px;
+    border-radius : 20px;
+    border : 0px;
+    font-size: 20px;
+}
 
 #colorlib-testimony {
     z-index: 0;

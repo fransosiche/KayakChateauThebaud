@@ -1,7 +1,6 @@
 @extends('template')
 
 @section('content')
-
     <div id="colorlib-contact">
         <div class="container">
             <div class="row">

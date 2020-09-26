@@ -269,8 +269,8 @@ class ReservationController extends Controller
 
         $data = DB::table('reservations')->where('id', $id)->get();
 
-        Mail::to($data[0]->Email)->send(new ReservationToCust((array)$data[0]));
-        Mail::to('fransosichewot@gmail.com')->send(new ReservationALCKCT((array)$data[0]));
+        //Mail::to($data[0]->Email)->send(new ReservationToCust((array)$data[0]));
+        //Mail::to('fransosichewot@gmail.com')->send(new ReservationALCKCT((array)$data[0]));
 
         toastr()->success('Réservation effectuée ! Vous allez recevoir un mail de confirmation prochainement.');
 

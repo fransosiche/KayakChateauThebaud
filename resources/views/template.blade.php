@@ -165,9 +165,8 @@
             </ul>
         </div>
     </aside>
-
+    @include('cookieConsent::index')
     @yield('content')
-
 
     <footer id="colorlib-footer">
         <div class="container">

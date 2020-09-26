@@ -60,6 +60,7 @@ Route::get('/Reservation/4H', array('as' => 'FoursHoursDisplay', 'uses' => 'Rese
 Route::get('/Reservation/Journee', array('as' => 'HeightHoursDisplay', 'uses' => 'ReservationController@HeightHoursDisplay'));
 
 Route::post('/Reservation/StoreReservation', array('as' => 'StoreReservation', 'uses' => 'ReservationController@StoreReservation'));
+Route::post('/Reservation/StoreReservationv2', array('as' => 'StoreReservation', 'uses' => 'ReservationController@StoreReservation'));
 
 Route::post('/Reservation/Canoe-Kayak-Reservation/{id}', array('as' => 'EndReservation', 'uses' => 'ReservationController@ReservationBoat'));
 

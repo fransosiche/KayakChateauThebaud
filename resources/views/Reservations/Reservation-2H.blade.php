@@ -7,7 +7,7 @@
             <div class="row">
                 <div class="col-md-10 col-md-offset-1 animate-box">
                     <h2>Veuillez renseigner les informations</h2>
-                    <form action="/Reservation/StoreReservation" method="POST">
+                    <form action="/Reservation/StoreReservationv2" method="POST">
                         @csrf
                         <div class="row form-group">
                             <div class="col-md-6">
