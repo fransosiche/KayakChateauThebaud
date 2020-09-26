@@ -31,6 +31,12 @@ class MainController extends Controller
 
     }
 
+    public function VêtementsDisplay()
+    {
+
+        return view('Vetements');
+    }
+
     public function ContactDisplay()
     {
 

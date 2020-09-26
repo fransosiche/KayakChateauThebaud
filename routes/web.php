@@ -25,6 +25,7 @@ Route::get('/Descente', array('as' => 'Descente', 'uses' => 'MainController@Desc
 Route::get('/Actualites', array('as' => 'Actualites', 'uses' => 'MainController@ActualiteDisplay'));
 Route::get('/Inscription', array('as' => 'Inscription', 'uses' => 'MainController@InscriptionDisplay'));
 Route::get('/Conditions', array('as' => 'Conditions', 'uses' => 'MainController@ConditionsDisplay'));
+Route::get('/Vêtements', array('as' => 'Vêtements', 'uses' => 'MainController@VêtementsDisplay'));
 
 ######### CONTACT  ############
 

@@ -73,6 +73,7 @@
                                 <ul class="dropdown">
                                     <li><a href="/Ecole">Ecole de pagaie</a></li>
                                     <li><a href="/Inscription">Inscription</a></li>
+                                    <li><a href="/Vêtements">Vêtements</a></li>
                                     <li><a href="/Pagayons">Pagayons</a></li>
                                     <li><a href="/Parcours">Parcours</a></li>
                                 </ul>
