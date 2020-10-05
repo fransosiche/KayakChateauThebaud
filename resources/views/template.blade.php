@@ -73,7 +73,9 @@
                                 <ul class="dropdown">
                                     <li><a href="/Ecole">Ecole de pagaie</a></li>
                                     <li><a href="/Inscription">Inscription</a></li>
+                                    @if (Auth::check() && Auth::user()->is_admin)
                                     <li><a href="/Réunions">Compte Rendu de réunion</a></li>
+                                    @endif
                                     <li><a href="/Vêtements">Vêtements</a></li>
                                     <li><a href="/Pagayons">Pagayons</a></li>
                                     <li><a href="/Parcours">Parcours</a></li>
@@ -92,7 +94,6 @@
                             <li class="btn-cta"><a href="/Reservation">Locations</a></li>
                             @if(Auth::user() == null)
                                 <li><a href="/login" class="nav-link">Se Connecter</a></li>
-                                <li><a href="/register" class="nav-link">S'enregister</a></li>
                             @else
                                 <li><a> Bonjour {{ Auth::user() -> name }}</a></li>
                                 <li><a href="/logout">Déconnexion</a></li>

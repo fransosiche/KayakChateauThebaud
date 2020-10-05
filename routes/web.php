@@ -38,7 +38,7 @@ Route::get('/Contact', array('as' => 'Contact', 'uses' => 'MainController@Contac
 Route::post('/Contact', array('as' => 'StoreContact', 'uses' => 'MainController@StoreContact'));
 
 ######### USERS  ############
-Auth::routes();
+Auth::routes(['register' => false]);
 Route::get('/logout', '\App\Http\Controllers\Auth\LoginController@logout');
 
 
