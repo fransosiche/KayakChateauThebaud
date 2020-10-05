@@ -27,6 +27,11 @@ Route::get('/Inscription', array('as' => 'Inscription', 'uses' => 'MainControlle
 Route::get('/Conditions', array('as' => 'Conditions', 'uses' => 'MainController@ConditionsDisplay'));
 Route::get('/Vêtements', array('as' => 'Vêtements', 'uses' => 'MainController@VêtementsDisplay'));
 
+######### REUNIONS  ############
+
+Route::get('/Réunions', array('as' => 'Réunions', 'uses' => 'MeetingController@MeetingDisplay'));
+Route::get('/AjouterCompteRendu', array('as' => 'AddRéunion', 'uses' => 'MeetingController@AjoutCompteRendu'));
+
 ######### CONTACT  ############
 
 Route::get('/Contact', array('as' => 'Contact', 'uses' => 'MainController@ContactDisplay'));

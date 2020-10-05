@@ -7,9 +7,10 @@
                 <div class="col-md-8 col-md-offset-2 text-center colorlib-heading animate-box">
                     <h2>Nos vêtements</h2>
                     <p>Retrouvez les vêtements proposés par le club de canoë-kayak de Château-Thébaud </p>
+                    <p> Aucun vêtement disponible pour le moment. </p>
                 </div>
             </div>
-            <div class="row">
+        <!--<div class="row">
                 <div class="col-md-4 animate-box">
                     <article class="article-entry">
                         <a class="blog-img"
@@ -21,7 +22,7 @@
                         </div>
                     </article>
                 </div>
-            </div>
+            </div>-->
         </div>
     </div>
 @endsection
