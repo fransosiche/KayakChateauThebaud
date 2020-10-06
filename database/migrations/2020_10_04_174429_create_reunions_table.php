@@ -18,7 +18,6 @@ class CreateReunionsTable extends Migration
             $table->timestamps();
             $table->string('Title');
             $table->string('URL_TO_PDF');
-            $table->DateTime('Date');
         });
     }
 

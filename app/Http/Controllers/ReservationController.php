@@ -17,7 +17,7 @@ class ReservationController extends Controller
         $today = date('Y-m-d');
         $today = date('Y-m-d', strtotime($today));
         $startDate = date('Y-m-d', strtotime("2020/05/01"));
-        $endDate = date('Y-m-d', strtotime("2020/10/15"));
+        $endDate = date('Y-m-d', strtotime("2020/10/01"));
         $dayOfWeek = date('l');
 
         if (($today >= $startDate) && ($today <= $endDate)) {
@@ -269,8 +269,9 @@ class ReservationController extends Controller
 
         $data = DB::table('reservations')->where('id', $id)->get();
 
-        //Mail::to($data[0]->Email)->send(new ReservationToCust((array)$data[0]));
-        //Mail::to('fransosichewot@gmail.com')->send(new ReservationALCKCT((array)$data[0]));
+        Mail::to($data[0]->Email)->send(new ReservationToCust((array)$data[0]));
+        Mail::to('valeriesibioude@hotmail.fr')->send(new ReservationALCKCT((array)$data[0]));
+        Mail::to('moriceauchristian@orange.fr')->send(new ReservationALCKCT((array)$data[0]));
 
         toastr()->success('Réservation effectuée ! Vous allez recevoir un mail de confirmation prochainement.');
 

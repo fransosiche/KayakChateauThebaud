@@ -31,6 +31,7 @@ Route::get('/Vêtements', array('as' => 'Vêtements', 'uses' => 'MainController@
 
 Route::get('/Réunions', array('as' => 'Réunions', 'uses' => 'MeetingController@MeetingDisplay'));
 Route::get('/AjouterCompteRendu', array('as' => 'AddRéunion', 'uses' => 'MeetingController@AjoutCompteRendu'));
+Route::post('/Reunions', array('as' => 'StoreReunions', 'uses' => 'MeetingController@StoreReunions'));
 
 ######### CONTACT  ############
 

@@ -73,7 +73,8 @@ class MainController extends Controller
             'subject' => 'required',
             'message' => 'required'
         ]);
-        Mail::to('alckct44@gmail.com')->send(new ContactMail($data));
+        Mail::to('valeriesibioude@hotmail.fr')->send(new ContactMail($data));
+        Mail::to('moriceauchristian@orange.fr')->send(new ContactMail($data));
         toastr()->success('Mail envoyé !');
 
         return redirect('/');
