@@ -228,7 +228,7 @@
                         <li><a href="tel://0240065407"><i class="icon-phone"></i> 02.40.06.54.07</a></li>
                         <li><a href="mailto:alckct@orange.fr"><i class="icon-envelope"></i> alckct@orange.fr </a></li>
                         <li><a href="https://canoekayak.amicale-mcanonnet.org"><i class="icon-location4"></i>
-                                canoekayak.amicale-mcanonnet.org</a></li>
+                                https://www.canoekayakchateauthebaud.fr/</a></li>
                     </ul>
                 </div>
             </div>

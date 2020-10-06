@@ -22,7 +22,7 @@
                                 </div>
                                 <div class="con-info">
                                     <p><span><i class="icon-globe"></i></span> <a
-                                            href="canoekayak.amicale-mcanonnet.org">canoekayak.amicale-mcanonnet.org</a>
+                                            href="https://www.canoekayakchateauthebaud.fr/">https://www.canoekayakchateauthebaud.fr/</a>
                                     </p>
                                 </div>
                             </div>
