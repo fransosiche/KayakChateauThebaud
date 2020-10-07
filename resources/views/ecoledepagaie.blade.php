@@ -6,19 +6,26 @@
             <div class="row">
                 <div class="col-md-8 col-md-offset-2 text-center colorlib-heading animate-box">
                     <h2>L'école de pagaie</h2>
-                    <p>L'école de pagaie reprendra le mercredi 2 septembre 2020. </p>
-                    <p> Les créneaux pour les enfants sont le mercredi de 13h50 à 15h50 pour les débutants, les
-                        confirmés de 15h50 à 18h. Nous avons aussi le samedi de 10h30 à 12h30.
+                    <p>Le club grâce à son école de pagaie fait découvrir le canoë et le kayak aux jeunes (à partir de
+                    8ans), perfectionne leur navigation et leur aisance par le jeu.</p>
 
-                        Pour les adultes intéressés pour naviguer un créneau de 10h30 à 12h30 le samedi matin.
+                    <p>Tout au long de l'année les jeunes s'empreignent des disciplines variées du canoë kayak, slalom,
+                    descente, kayak-polo, course en ligne, mers que l'on propose au sein du club.</p>
 
-                        Pour ceux qui veulent découvrir le kayak polo les séances auront lieu le mercredi soir de 18h30
-                        à 20h30.
-                    <p>
-                        lieu : club de canoë kayak de Château Thébaud à Pont Caffino</p>
-                    <p>
-                        Pour nous contacter 02.40.06.54.07 Valérie SIBIOUDE
-                    </p>
+                    <p>Ils apprennent comment déplacer leur embarcation dans différentes directions, la coordination,
+                    l'équilibre, le travail en groupe, l'environnement qui nous entoure.....</p>
+
+                    <p>Des challenges jeunes sont proposés tout au long de l'année sur les différentes disciplines du canoë
+                    kayak, une façon de montrer ce qui a été appris pendant l'école de pagaie et de rencontrer des
+                    jeunes de différent club du département.</p>
+
+                    <p>De nombreux kayakiste du club sont passés par l'école de pagaie et maintenant sont dans la
+                    compétition au niveau national.</p>
+
+                    <p>Les créneaux pour les enfants sont le mercredi de 13h50 à 15h50 pour les débutants et de 16h à 18h
+                    pour l’école de sport.</p>
+
+                    <p>Le créneau adulte est le samedi de 10h à 12h.</p>
                 </div>
             </div>
             <div class="row">

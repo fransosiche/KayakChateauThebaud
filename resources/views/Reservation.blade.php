@@ -5,6 +5,14 @@
             <div class="row">
                 <div class="col-md-8 col-md-offset-2 text-center colorlib-heading animate-box">
                     <h2>Nos embarcations & tarifs pour les locations</h2>
+                    <p>En famille, entre amis, pour la journée ou pour plusieurs jours, la randonnée en canoë ou en
+                        kayak est depuis longtemps l'activité la plus pratiquée en Sèvre et Maine.</p>
+
+                    <p> Elle permet, sans effort physique particulier, de découvrir les paysages remarquables des
+                        petites vallées des Pays du Vignoble Nantais.</p>
+
+                    <p> Sur notre site de Pont Caffino, surplombé de falaises, la vallée de la Maine ressemble à un
+                        véritable petit canyon où il est possible de pratiquer de nombreuses activités.</p>
                     <p>Les locations se feront uniquement sur réservation via internet ou au 02.40.06.54.07,
                         elles sont disponibles de début Mai à mi Octobre. Les réservations sur internet sont
                         indisponible durant le week-end.
@@ -65,7 +73,8 @@
                         </div>
                         <div class="desc">
                             <h3>Canoë</h3>
-                            <p>Location de canoë de 2 à 4 places. Les canoës se manoeuvrent à l'aide d'une pagaie simple (à
+                            <p>Location de canoë de 2 à 4 places. Les canoës se manoeuvrent à l'aide d'une pagaie simple
+                                (à
                                 l'inverse du kayak) en position assise souvent plus haute.</p>
                         </div>
                     </div>

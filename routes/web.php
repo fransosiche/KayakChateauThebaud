@@ -26,6 +26,7 @@ Route::get('/Actualites', array('as' => 'Actualites', 'uses' => 'MainController@
 Route::get('/Inscription', array('as' => 'Inscription', 'uses' => 'MainController@InscriptionDisplay'));
 Route::get('/Conditions', array('as' => 'Conditions', 'uses' => 'MainController@ConditionsDisplay'));
 Route::get('/Vêtements', array('as' => 'Vêtements', 'uses' => 'MainController@VêtementsDisplay'));
+Route::get('/Bureau', array('as' => 'Bureau', 'uses' => 'MainController@BureauDisplay'));
 
 ######### REUNIONS  ############
 

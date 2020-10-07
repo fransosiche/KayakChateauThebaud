@@ -1,14 +1,15 @@
 <!DOCTYPE HTML>
 <html lang="fr">
 <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>Canoë Kayak Château Thébaud</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="Site officiel du club de Canoë-Kayak de Château-Thébaud"/>
-    <meta name="keywords" content="Canoë, Kayak, Château-Thébaud, Loire-Atlantique, Location, Réservation, Cours, Sport, Club, Loisir, Base de Loisir, Pont Caffino, Paddle, 44"/>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="Site officiel du club de Canoë-Kayak de Château-Thébaud. Location de canoe kayak et actualités du club."/>
+    <meta name="keywords" content="Canoë, canoe, kayak, reservation, Kayak, Château-Thébaud, Loire-Atlantique, Location, Réservation, Cours, Sport, Club, Loisir, Base de Loisir, Pont Caffino, Paddle, 44"/>
     <meta name="author" content="François Biron"/>
+    <meta name="robots" content="index"/>
     <link href="{{ asset('images/fav.jpg') }}" rel="icon">
+
 
 
     <!-- Facebook and Twitter integration -->
@@ -73,6 +74,7 @@
                                 <ul class="dropdown">
                                     <li><a href="/Ecole">Ecole de pagaie</a></li>
                                     <li><a href="/Inscription">Inscription</a></li>
+                                    <li><a href="/Bureau">Bureau</a></li>
                                     @if (Auth::check() && Auth::user()->is_admin)
                                     <li><a href="/Réunions">Compte Rendu de réunion</a></li>
                                     @endif
@@ -227,7 +229,7 @@
                         </li>
                         <li><a href="tel://0240065407"><i class="icon-phone"></i> 02.40.06.54.07</a></li>
                         <li><a href="mailto:alckct@orange.fr"><i class="icon-envelope"></i> alckct@orange.fr </a></li>
-                        <li><a href="https://canoekayak.amicale-mcanonnet.org"><i class="icon-location4"></i>
+                        <li><a href="https://www.canoekayakchateauthebaud.fr"><i class="icon-location4"></i>
                                 www.canoekayakchateauthebaud.fr</a></li>
                     </ul>
                 </div>

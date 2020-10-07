@@ -31,6 +31,12 @@ class MainController extends Controller
 
     }
 
+    public function BureauDisplay()
+    {
+        return view('Bureau');
+
+    }
+
     public function VêtementsDisplay()
     {
 
