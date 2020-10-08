@@ -27,7 +27,7 @@
                             <img class="blog-img" style="padding-left: 3em"
                                  src="{{ url('/images/PDF.png')}}">
                             <div class="desc">
-                                <h2><a>{{$data->Title}} datant du {{ substr($data->created_at,0,10)}}</a></h2>
+                                <h2><a>{{$data->Title}} mis en ligne le {{ substr($data->created_at,0,10)}}</a></h2>
                                 <ul class="week">
                                     <form class="active" style="padding-right:50px " method="get"
                                           action="{{ url('/pdf')}}/{{$data->URL_TO_PDF}}">
