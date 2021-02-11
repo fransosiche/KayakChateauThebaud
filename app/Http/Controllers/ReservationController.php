@@ -16,8 +16,8 @@ class ReservationController extends Controller
     {
         $today = date('Y-m-d');
         $today = date('Y-m-d', strtotime($today));
-        $startDate = date('Y-m-d', strtotime("2020/05/01"));
-        $endDate = date('Y-m-d', strtotime("2020/10/01"));
+        $startDate = date('Y-m-d', strtotime("2021/05/01"));
+        $endDate = date('Y-m-d', strtotime("2021/10/01"));
         $dayOfWeek = date('l');
 
         if (($today >= $startDate) && ($today <= $endDate)) {
